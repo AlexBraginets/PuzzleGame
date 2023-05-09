@@ -32,14 +32,14 @@ namespace Utils
             {
                 offset = offsetCopy + Vector3.right * Mathf.Lerp(0, maxDx, i / stepsCount);
                 ApplyOffset();
-                if (_display.Length < minLength)
+                if ((_display.Length % 1.1f) < minLength)
                 {
                     minOffset = offset;
-                    minLength = _display.Length;
+                    minLength = _display.Length % 1.1f;
                 }
             }
 
-            Debug.Log($"min offset: {minOffset}");
+            Debug.Log($"min offset: {minOffset.ToString("N10")}, minLength: {minLength}");
             offset = offsetCopy;
         }
 
