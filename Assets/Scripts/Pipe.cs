@@ -10,13 +10,21 @@ public class Pipe : MonoBehaviour
     [SerializeField] private Transform[] _locations;
     private int _currentLocation;
     [SerializeField] private BallLocator[] _ballLocators;
-
+    private Transform _ballsParent;
     public void AttachBalls(Ball[] balls)
     {
+        _ballsParent = balls[0].transform.parent;
         _balls = balls;
         foreach (var ball in _balls)
         {
             ball.transform.parent = transform;
+        }
+    }
+    public void DeattachBalls()
+    {
+        foreach (var ball in _balls)
+        {
+            ball.transform.parent = _ballsParent;
         }
     }
 
@@ -36,6 +44,7 @@ public class Pipe : MonoBehaviour
         var balls = GetBalls();
         AttachBalls(balls);
         SwapLocation();
+        DeattachBalls();
     }
 
     private void SwapLocation()

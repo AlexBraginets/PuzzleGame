@@ -44,7 +44,10 @@ public class InputController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            if (!isDragging) return;
             isDragging = false;
+
+            if (_deltaMoved == 0f) return;
             _deltaMoved %= 1.1f;
             if (_deltaMoved < 0) _deltaMoved += 1.1f;
             Debug.Log($"_deltaMoved: {_deltaMoved}");

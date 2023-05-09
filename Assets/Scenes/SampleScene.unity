@@ -945,8 +945,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786762156}
-  m_LocalRotation: {x: 0, y: 0, z: 0.5542987, w: 0.8323179}
-  m_LocalPosition: {x: -0.645, y: -0.69000006, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5315915, w: 0.8470009}
+  m_LocalPosition: {x: -1.19, y: -0.69000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 936198645}
   - component: {fileID: 936198644}
   m_Layer: 0
-  m_Name: waypoints mover
+  m_Name: 'waypoints mover '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2543,8 +2543,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528087682}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7276617, w: 0.6859362}
-  m_LocalPosition: {x: 0.615, y: 1.895, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.69694954, w: 0.7171202}
+  m_LocalPosition: {x: -0.0150049925, y: 2.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3030,8 +3030,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825088683}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7276617, w: 0.6859362}
-  m_LocalPosition: {x: 0.615, y: 1.895, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.69694954, w: 0.7171202}
+  m_LocalPosition: {x: -0.0150049925, y: 2.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
