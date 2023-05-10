@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -8,7 +6,7 @@ public class Ball : MonoBehaviour
     [SerializeField]private int _lineIndex;
     private float _lineDistance;
     private float _distance;
-
+    public void UpdateWayData(WayData wayData) => _wayData = wayData;
     public void UpdatePosData(int lineIndex, float lineDistance)
     {
         _lineIndex = lineIndex;
@@ -44,6 +42,7 @@ public class Ball : MonoBehaviour
 
     private void MoveNegative(float distance)
     {
+        Debug.Log($"_lineIndex: {_lineIndex}");
         Line[] lines = _wayData.Lines;
         Line line = lines[_lineIndex];
         _distance -= distance;

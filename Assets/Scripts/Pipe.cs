@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
+    [SerializeField] private WayData[] _wayDatas;
     [SerializeField] private int _ballsCount;
     private Ball[] _balls;
     [SerializeField] private Transform[] _locations;
@@ -55,6 +56,7 @@ public class Pipe : MonoBehaviour
             var ball = balls[i];
             Debug.Log($"i: {i}");
             ball.UpdatePosData(wayIndex[i], localLength[i]);
+            ball.UpdateWayData(_wayDatas[_currentLocation]);
         }
     }
 

@@ -30,7 +30,6 @@ namespace Utils
             var a = _waypoints[0];
             var b = _waypoints[1];
             UpdateLocation(a.position, b.position);
-            
         }
 
         private void UpdateLocation(Vector3 a, Vector3 b)
@@ -46,7 +45,7 @@ namespace Utils
 
         private void UpdateRotation(Vector3 a, Vector3 b)
         {
-            transform.up = (b - a).normalized;
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, (b - a));
         }
     }
 }
