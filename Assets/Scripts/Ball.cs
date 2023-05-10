@@ -8,6 +8,12 @@ public class Ball : MonoBehaviour
     [SerializeField]private int _lineIndex;
     private float _lineDistance;
     private float _distance;
+
+    public void UpdatePosData(int lineIndex, float lineDistance)
+    {
+        _lineIndex = lineIndex;
+        _lineDistance = lineDistance;
+    }
     [SerializeField] private float deltaMoved;
     public void SetDistance(float distance)
     {

@@ -20,6 +20,8 @@ public class Line
    {
       return ClosestPointOnLine(a, b, point, out distance);
    }
+
+   public float Distance(Vector3 point) => Vector3.Distance(a, point);
    private  static Vector3 ClosestPointOnLine(Vector3 vA, Vector3 vB, Vector3 vPoint, out float distance)
    {
       var vVector1 = vPoint - vA;

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Utils
@@ -5,6 +6,17 @@ namespace Utils
     public class PipePositioner : MonoBehaviour
     {
         [SerializeField] private Transform[] _waypoints;
+
+        [SerializeField] private bool deactivate;
+
+        private void Awake()
+        {
+            Allign();
+            if (deactivate)
+            {
+                gameObject.SetActive(false);
+            }
+        }
 
         [ContextMenu("Allign")]
         private void Allign()
