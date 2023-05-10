@@ -2554,7 +2554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayDataHolder: {fileID: 609037525}
-  _ballsCount: 4
+  _ballsCount: 12
   _ballPrefab: {fileID: 2130166467, guid: d2ab10bbbeca7894994387fe38719044, type: 3}
   _spawnLineIndex: 1
   _startPosition: {fileID: 2137467317}

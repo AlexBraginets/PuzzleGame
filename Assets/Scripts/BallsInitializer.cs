@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using Utils;
 
 public class BallsInitializer : MonoBehaviour
 {
@@ -19,16 +20,23 @@ public class BallsInitializer : MonoBehaviour
         float distance = GetStartDistance();
         float dx = 1.1f;
         Line spawnLine = lines[_spawnLineIndex];
-        
+        WayData wayData = new WayData()
+        {
+            Lines = lines,
+            LineIndex = _spawnLineIndex,
+            LocalLength = distance
+        };   
         for (int i = 0; i < _ballsCount; i++)
         {
-            Vector3 position = spawnLine.GetPoint(distance);
+            spawnLine = lines[wayData.LineIndex];
+            Vector3 position = spawnLine.GetPoint(wayData.LocalLength);
             Ball ball = Instantiate(_ballPrefab, transform);
             ball.transform.position = position;
-            ball.SetDistance(distance);
+            wayData.Simplify();
+            ball.SetDistance(wayData.LocalLength);
             ball.SetWayData(wayDataHolder);
-            ball.SetLineIndex(_spawnLineIndex);
-            distance += dx;
+            ball.SetLineIndex(wayData.LineIndex);
+            wayData.LocalLength += dx;
         }
     }
 

@@ -16,13 +16,16 @@ namespace Utils
                 throw new NotImplementedException("Implement Simplify() for negative LocalLength of WayData.a");
             }
 
-            while (localLength > currentLineLength)
+            while (localLength > currentLineLength - .001f)
             {
                 currentLineIndex++;
                 if (currentLineIndex == lines.Length) currentLineIndex = 0;
                 localLength -= currentLineLength;
                 currentLineLength = lines[currentLineIndex].Length;
             }
+
+            wayData.LocalLength = localLength;
+            wayData.LineIndex = currentLineIndex;
         }
     }
 }
