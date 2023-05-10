@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private WayData _wayData;
+    [FormerlySerializedAs("_wayData")] [SerializeField] private WayDataHolder wayDataHolder;
     [SerializeField]private int _lineIndex;
     private float _lineDistance;
     private float _distance;
-    public void UpdateWayData(WayData wayData) => _wayData = wayData;
+    public void UpdateWayData(WayDataHolder wayDataHolder) => this.wayDataHolder = wayDataHolder;
     public void UpdatePosData(int lineIndex, float lineDistance)
     {
         _lineIndex = lineIndex;
@@ -18,9 +19,9 @@ public class Ball : MonoBehaviour
         _distance = distance;
     }
 
-    public void SetWayData(WayData wayData)
+    public void SetWayData(WayDataHolder wayDataHolder)
     {
-        _wayData = wayData;
+        this.wayDataHolder = wayDataHolder;
     }
 
     public void SetLineIndex(int lineIndex)
@@ -43,7 +44,7 @@ public class Ball : MonoBehaviour
     private void MoveNegative(float distance)
     {
         Debug.Log($"_lineIndex: {_lineIndex}");
-        Line[] lines = _wayData.Lines;
+        Line[] lines = wayDataHolder.Lines;
         Line line = lines[_lineIndex];
         _distance -= distance;
         if (_distance <= 0)
@@ -63,7 +64,7 @@ public class Ball : MonoBehaviour
 
     private void MovePositive(float distance)
     {
-        Line[] lines = _wayData.Lines;
+        Line[] lines = wayDataHolder.Lines;
         Line line = lines[_lineIndex];
         float lineLength = line.Length;
         _distance += distance;

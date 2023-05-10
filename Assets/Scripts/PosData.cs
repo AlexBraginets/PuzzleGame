@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PosData : MonoBehaviour
 {
-    [field: SerializeField] public WayData WayData { get; private set; }
+    [field: SerializeField] public WayDataHolder WayDataHolder { get; private set; }
     public int wayIndex;
     public float localLength;
 
@@ -16,7 +16,7 @@ public class PosData : MonoBehaviour
 
     private void GetPosData(Vector3 pos, out int wayIndex, out float localLength)
     {
-        Line[] lines = WayData.Lines;
+        Line[] lines = WayDataHolder.Lines;
         float distance;
         float minDistance = float.MaxValue;
         Vector3 minPoint = pos;

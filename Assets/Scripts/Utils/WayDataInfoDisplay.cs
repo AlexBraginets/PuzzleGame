@@ -1,11 +1,12 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Utils
 {
     public class WayDataInfoDisplay : MonoBehaviour
     {
-        [SerializeField] private WayData _wayData;
+        [FormerlySerializedAs("_wayData")] [SerializeField] private WayDataHolder wayDataHolder;
 
         [ContextMenu("Log info")]
         public void LogInfo()
@@ -23,7 +24,7 @@ namespace Utils
         {
             get
             {
-                Line[] lines = _wayData.Lines;
+                Line[] lines = wayDataHolder.Lines;
                 float length = lines.Sum(line => line.Length);
                 return length;
             }

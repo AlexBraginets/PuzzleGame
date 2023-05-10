@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192925546}
   m_Layer: 0
-  m_Name: Way Right
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,14 +146,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192925544}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 617880982}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 899527203}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &285881982
 GameObject:
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayData>k__BackingField: {fileID: 609037525}
+  <WayDataHolder>k__BackingField: {fileID: 0}
   wayIndex: 1
   localLength: 4.4
 --- !u!114 &313963047
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d271c86cfb26d459624f7ed8d67da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wayData: {fileID: 609037525}
+  wayDataHolder: {fileID: 609037525}
 --- !u!1 &617880980
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d271c86cfb26d459624f7ed8d67da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wayData: {fileID: 617880981}
+  wayDataHolder: {fileID: 617880981}
 --- !u!1 &631434420
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +871,7 @@ Transform:
   - {fileID: 1351472293}
   - {fileID: 1226008957}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -98.2, y: 0, z: 56.31}
 --- !u!1 &798405024
 GameObject:
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayData>k__BackingField: {fileID: 609037525}
+  <WayDataHolder>k__BackingField: {fileID: 0}
   wayIndex: 1
   localLength: 3.3
 --- !u!114 &843740702
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   _ballLayerMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!1 &936198643
+--- !u!1 &899527202
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1107,52 +1107,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 936198645}
-  - component: {fileID: 936198644}
+  - component: {fileID: 899527203}
   m_Layer: 0
-  m_Name: 'waypoints mover '
+  m_Name: Ways
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &936198644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936198643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db2b10d3ce605324a8a5d5f98a37fddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _display: {fileID: 609037526}
-  offset: {x: 3.75027, y: 2.38, z: 0}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  maxDx: 0.1
-  stepsCount: 10000
---- !u!4 &936198645
+--- !u!4 &899527203
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936198643}
+  m_GameObject: {fileID: 899527202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.83999, y: 2.38, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1139395613}
+  - {fileID: 192925546}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -1248,7 +1226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1139395613}
   m_Layer: 0
-  m_Name: Way Left
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1261,14 +1239,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139395611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 609037524}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 899527203}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1181164772
 GameObject:
@@ -1396,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayData>k__BackingField: {fileID: 609037525}
+  <WayDataHolder>k__BackingField: {fileID: 0}
   wayIndex: 1
   localLength: 3.1153944
 --- !u!1 &1226008956
@@ -1510,7 +1488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayData>k__BackingField: {fileID: 617880981}
+  <WayDataHolder>k__BackingField: {fileID: 0}
   wayIndex: 1
   localLength: 3.3
 --- !u!114 &1226008962
@@ -1833,7 +1811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayData>k__BackingField: {fileID: 617880981}
+  <WayDataHolder>k__BackingField: {fileID: 0}
   wayIndex: 1
   localLength: 4.4
 --- !u!114 &1351472298
@@ -1886,7 +1864,7 @@ Transform:
   - {fileID: 1181164773}
   - {fileID: 2137467317}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: -726.7}
 --- !u!114 &1528087684
 MonoBehaviour:
@@ -2478,7 +2456,7 @@ Transform:
   - {fileID: 313963042}
   - {fileID: 843740697}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -98.2, y: 0, z: 56.31}
 --- !u!1 &1957693568
 GameObject:
@@ -2529,7 +2507,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037611684
 GameObject:
@@ -2561,7 +2539,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2037611687
 MonoBehaviour:
@@ -2575,7 +2553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159cbf7eb4ec463409d15f04a3082b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wayData: {fileID: 609037525}
+  wayDataHolder: {fileID: 609037525}
   _ballsCount: 4
   _ballPrefab: {fileID: 2130166467, guid: d2ab10bbbeca7894994387fe38719044, type: 3}
   _spawnLineIndex: 1
@@ -2706,6 +2684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayData>k__BackingField: {fileID: 609037525}
+  <WayDataHolder>k__BackingField: {fileID: 0}
   wayIndex: 1
   localLength: 2.0153947

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
-    [SerializeField] private WayData[] _wayDatas;
+    [SerializeField] private WayDataHolder[] _wayDatas;
     [SerializeField] private int _ballsCount;
     private Ball[] _balls;
     [SerializeField] private Transform[] _locations;

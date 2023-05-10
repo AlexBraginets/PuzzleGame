@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BallsInitializer : MonoBehaviour
 {
-    [SerializeField] private WayData _wayData;
+    [FormerlySerializedAs("_wayData")] [SerializeField] private WayDataHolder wayDataHolder;
     [SerializeField] private int _ballsCount;
     [SerializeField] private Ball _ballPrefab;
     [SerializeField] private int _spawnLineIndex;
@@ -17,7 +15,7 @@ public class BallsInitializer : MonoBehaviour
 
     private void Init()
     {
-        Line[] lines = _wayData.Lines;
+        Line[] lines = wayDataHolder.Lines;
         float distance = GetStartDistance();
         float dx = 1.1f;
         Line spawnLine = lines[_spawnLineIndex];
@@ -28,7 +26,7 @@ public class BallsInitializer : MonoBehaviour
             Ball ball = Instantiate(_ballPrefab, transform);
             ball.transform.position = position;
             ball.SetDistance(distance);
-            ball.SetWayData(_wayData);
+            ball.SetWayData(wayDataHolder);
             ball.SetLineIndex(_spawnLineIndex);
             distance += dx;
         }
@@ -36,7 +34,7 @@ public class BallsInitializer : MonoBehaviour
 
     private float GetStartDistance()
     {
-        Line[] lines = _wayData.Lines;
+        Line[] lines = wayDataHolder.Lines;
         Line spawnLine = lines[_spawnLineIndex];
         Vector3 startPosition = _startPosition.position;
         var closestPoint = spawnLine.ClosestPoint(startPosition, out float distance);
