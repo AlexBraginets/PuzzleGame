@@ -22,7 +22,9 @@ public class TubeSwitcher : MonoBehaviour
         var tube = hit.transform.GetComponent<Pipe>();
         if (!tube)
         {
+            Debug.LogError("No Pipe present.", hit.transform);
             throw new NotImplementedException("No Pipe present.");
         }
+        tube.Switch();
     }
 }

@@ -49,6 +49,11 @@ public class Pipe : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
+    }
+
+    public void Switch()
+    {
         var balls = GetBalls();
         AttachBalls(balls);
         SwapLocation();
