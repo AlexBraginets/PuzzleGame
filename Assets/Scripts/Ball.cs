@@ -1,5 +1,4 @@
 using UnityEngine;
-using Utils;
 
 public class Ball : MonoBehaviour
 {
@@ -11,22 +10,6 @@ public class Ball : MonoBehaviour
         set => transform.parent = value;
     }
 
-    private int _lineIndex;
-
-    private int LineIndex
-    {
-        get => _lineIndex;
-        set
-        {
-            int linesCount = _wayData.Lines.Length;
-            _lineIndex = value;
-            if (_lineIndex < 0) _lineIndex += linesCount;
-            else if (_lineIndex >= linesCount) _lineIndex -= linesCount;
-            _wayData.LineIndex = LineIndex;
-            Debug.Log($"LineIndex:{value}->{_lineIndex}");
-        }
-    }
-
     public void UpdateLines(Line[] lines) => _wayData.Lines = lines;
 
     public void UpdatePosData(PosData data)
@@ -36,18 +19,13 @@ public class Ball : MonoBehaviour
     }
 
     public void SetDistance(float distance) => _wayData.LocalLength = distance;
-    public void SetLineIndex(int lineIndex) => LineIndex = lineIndex;
+    public void SetLineIndex(int lineIndex) => _wayData.LineIndex = lineIndex;
 
     public void Move(float distance)
     {
         if (distance == 0) return;
         _wayData.LocalLength += distance;
-        _wayData.Simplify();
-        Line[] lines = _wayData.Lines;
-        LineIndex = _wayData.LineIndex;
-        Line line = lines[LineIndex];
-        var position = line.GetPoint(_wayData.LocalLength);
-        Move(position);
+        Move(_wayData.WorldPosiiton);
     }
 
     private void Move(Vector3 position)

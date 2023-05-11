@@ -30,9 +30,7 @@ namespace Utils
                 }
             }
 
-
-            wayData.LocalLength = localLength;
-            wayData.LineIndex = currentLineIndex;
+            wayData.HardSet(currentLineIndex, localLength);
         }
     }
 }
