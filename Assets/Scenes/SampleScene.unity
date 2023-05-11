@@ -1085,10 +1085,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
   _ballsContainers: []
-  _wayDatas: []
+  _ballsWayDataRefresher: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsAttacher: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
 --- !u!114 &786762158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,12 +2252,9 @@ MonoBehaviour:
   _ballsContainers:
   - {fileID: 2037611688}
   - {fileID: 1656985954}
-  _wayDatas:
-  - {fileID: 609037525}
-  - {fileID: 617880981}
+  _ballsWayDataRefresher: {fileID: 1332570177}
   _pipeMover: {fileID: 1528087689}
   _ballsAttacher: {fileID: 1528087688}
-  _ballsWayDataRefresher: {fileID: 1332570177}
 --- !u!65 &1528087686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2651,7 +2647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayDataHolder: {fileID: 617880981}
-  _ballsCount: 24
+  _ballsCount: 0
   _ballPrefab: {fileID: 2130166467, guid: d2ab10bbbeca7894994387fe38719044, type: 3}
   _spawnLineIndex: 1
   _startPosition: {fileID: 1226008957}
@@ -2881,10 +2877,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
   _ballsContainers: []
-  _wayDatas: []
+  _ballsWayDataRefresher: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsAttacher: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
 --- !u!114 &1825088685
 MonoBehaviour:
   m_ObjectHideFlags: 0

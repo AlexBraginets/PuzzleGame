@@ -24,8 +24,10 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            DOTween.To(() => 0f, x => MoveBalls(-x), _moveDistance, _moveDistance / _moveSpeed)
-                .OnComplete(() => _lastMoved = 0d);
+            // DOTween.To(() => 0f, x => MoveBalls(x), _moveDistance, _moveDistance / _moveSpeed)
+            //     .OnComplete(() => _lastMoved = 0d);
+            _lastMoved = 0;
+            MoveBalls(_moveDistance);
             return;
         }
 

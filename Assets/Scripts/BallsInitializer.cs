@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 
@@ -36,9 +35,9 @@ public class BallsInitializer : MonoBehaviour
             _ballsContainer.Add(ball);
             ball.transform.position = position;
             wayData.Simplify();
-            ball.SetDistance(wayData.LocalLength);
-            ball.SetWayData(wayDataHolder);
+            ball.UpdateLines(wayDataHolder.Lines);
             ball.SetLineIndex(wayData.LineIndex);
+            ball.SetDistance(wayData.LocalLength);
             wayData.LocalLength += dx;
         }
     }

@@ -10,8 +10,8 @@ public class BallsWayDataRefresher : MonoBehaviour
         for (int i = 0; i < balls.Length; i++)
         {
             var ball = balls[i];
+            ball.UpdateLines(_wayDataHolders[wayIndex].Lines);
             ball.UpdatePosData(data[i]);
-            ball.UpdateWayData(_wayDataHolders[wayIndex]);
         }
     }
     private void GetPosData(int wayIndex, out PosData[] data)
