@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 786762159}
   - component: {fileID: 786762158}
   - component: {fileID: 786762157}
+  - component: {fileID: 786762160}
   m_Layer: 9
   m_Name: Pipe p2
   m_TagString: Untagged
@@ -1085,11 +1086,9 @@ MonoBehaviour:
   _ballsProvider: {fileID: 0}
   _ballsContainers: []
   _wayDatas: []
-  _locations: []
-  _ballLocators:
-  - {fileID: 1351472298}
-  - {fileID: 1226008962}
+  _pipeMover: {fileID: 0}
   _ballsAttacher: {fileID: 0}
+  _ballsWayDataRefresher: {fileID: 0}
 --- !u!114 &786762158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,6 +1123,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -98.2, y: 0, z: 56.31}
+--- !u!114 &786762160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786762156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e091dbb726bd5c64394af0b950d460c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posDataProviders:
+  - {fileID: 1351472297}
+  - {fileID: 1226008961}
 --- !u!1 &798405024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1858,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248870703}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1332570176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332570178}
+  - component: {fileID: 1332570177}
+  m_Layer: 0
+  m_Name: Balls Way Data Refresher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1332570177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332570176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e67ddac70ef67945a5df3d87070b794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wayDataHolders:
+  - {fileID: 609037525}
+  - {fileID: 617880981}
+  _pipePosDataProviders:
+  - {fileID: 1825088687}
+  - {fileID: 786762160}
+--- !u!4 &1332570178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332570176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347648857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2195,7 @@ GameObject:
   - component: {fileID: 1528087686}
   - component: {fileID: 1528087687}
   - component: {fileID: 1528087688}
+  - component: {fileID: 1528087689}
   m_Layer: 9
   m_Name: Pipe
   m_TagString: Untagged
@@ -2191,13 +2256,9 @@ MonoBehaviour:
   _wayDatas:
   - {fileID: 609037525}
   - {fileID: 617880981}
-  _locations:
-  - {fileID: 1825088686}
-  - {fileID: 786762159}
-  _ballLocators:
-  - {fileID: 1181164777}
-  - {fileID: 2137467318}
+  _pipeMover: {fileID: 1528087689}
   _ballsAttacher: {fileID: 1528087688}
+  _ballsWayDataRefresher: {fileID: 1332570177}
 --- !u!65 &1528087686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2238,6 +2299,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23c240fbebe13c4286bea684311e439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1528087689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528087682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fddfa582f654c468348379efe59665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _locations:
+  - {fileID: 1825088686}
+  - {fileID: 786762159}
 --- !u!1 &1570291460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,6 +2859,7 @@ GameObject:
   - component: {fileID: 1825088686}
   - component: {fileID: 1825088685}
   - component: {fileID: 1825088684}
+  - component: {fileID: 1825088687}
   m_Layer: 9
   m_Name: Pipe p1
   m_TagString: Untagged
@@ -2805,11 +2882,9 @@ MonoBehaviour:
   _ballsProvider: {fileID: 0}
   _ballsContainers: []
   _wayDatas: []
-  _locations: []
-  _ballLocators:
-  - {fileID: 313963047}
-  - {fileID: 843740702}
+  _pipeMover: {fileID: 0}
   _ballsAttacher: {fileID: 0}
+  _ballsWayDataRefresher: {fileID: 0}
 --- !u!114 &1825088685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2844,6 +2919,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -98.2, y: 0, z: 56.31}
+--- !u!114 &1825088687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825088683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e091dbb726bd5c64394af0b950d460c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posDataProviders:
+  - {fileID: 313963046}
+  - {fileID: 843740701}
 --- !u!1 &1957693568
 GameObject:
   m_ObjectHideFlags: 0

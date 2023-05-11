@@ -46,7 +46,6 @@ public class InputController : MonoBehaviour
             if (_deltaMoved == 0f) return;
             _deltaMoved %= 1.1f;
             if (_deltaMoved < 0) _deltaMoved += 1.1f;
-            Debug.Log($"_deltaMoved: {_deltaMoved}");
             float dx;
             if (_deltaMoved < 1.1f / 2f)
             {

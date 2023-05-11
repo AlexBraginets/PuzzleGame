@@ -50,7 +50,6 @@ public class Ball : MonoBehaviour
 
     private void MoveNegative(float distance)
     {
-        Debug.Log($"_lineIndex: {_lineIndex}");
         Line[] lines = wayDataHolder.Lines;
         Line line = lines[_lineIndex];
         _distance -= distance;
@@ -79,7 +78,6 @@ public class Ball : MonoBehaviour
         {
             _distance -= lineLength;
             _lineIndex++;
-            Debug.Log($"_lineIndex++: {_lineIndex}",gameObject);
             _lineIndex %= lines.Length;
             line = lines[_lineIndex];
         }
