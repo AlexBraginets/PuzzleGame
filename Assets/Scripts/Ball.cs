@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour
 
     public void Move(float distance)
     {
-        if (distance <= 0) return;
+        if (distance == 0) return;
         MovePositive(distance);
     }
 

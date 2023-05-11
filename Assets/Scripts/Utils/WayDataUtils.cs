@@ -1,5 +1,3 @@
-using System;
-
 namespace Utils
 {
     public static class WayDataUtils
@@ -13,16 +11,25 @@ namespace Utils
             float currentLineLength = currentLine.Length;
             if (localLength < 0)
             {
-                throw new NotImplementedException("Implement Simplify() for negative LocalLength of WayData.a");
+                while (localLength < 0)
+                {
+                    currentLineIndex--;
+                    if (currentLineIndex == -1) currentLineIndex = lines.Length - 1;
+                    currentLineLength = lines[currentLineIndex].Length;
+                    localLength += currentLineLength;
+                }
+            }
+            else
+            {
+                while (localLength > currentLineLength - .001f)
+                {
+                    currentLineIndex++;
+                    if (currentLineIndex == lines.Length) currentLineIndex = 0;
+                    localLength -= currentLineLength;
+                    currentLineLength = lines[currentLineIndex].Length;
+                }
             }
 
-            while (localLength > currentLineLength - .001f)
-            {
-                currentLineIndex++;
-                if (currentLineIndex == lines.Length) currentLineIndex = 0;
-                localLength -= currentLineLength;
-                currentLineLength = lines[currentLineIndex].Length;
-            }
 
             wayData.LocalLength = localLength;
             wayData.LineIndex = currentLineIndex;
