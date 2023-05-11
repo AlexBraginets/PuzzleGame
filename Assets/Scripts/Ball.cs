@@ -41,11 +41,6 @@ public class Ball : MonoBehaviour
     public void Move(float distance)
     {
         if (distance == 0) return;
-        MovePositive(distance);
-    }
-
-    private void MovePositive(float distance)
-    {
         _wayData.LocalLength += distance;
         _wayData.Simplify();
         Line[] lines = _wayData.Lines;
@@ -54,25 +49,6 @@ public class Ball : MonoBehaviour
         var position = line.GetPoint(_wayData.LocalLength);
         Move(position);
     }
-
-    // private void MoveNegative(float distance)
-    // {
-    //     Line[] lines = wayDataHolder.Lines;
-    //     Line line = lines[LineIndex];
-    //     _localLength -= distance;
-    //     if (_localLength <= 0)
-    //     {
-    //         LineIndex--;
-    //         if (LineIndex < 0) LineIndex = lines.Length - 1;
-    //         line = lines[LineIndex];
-    //         float lineLength = line.Length;
-    //         _localLength += lineLength;
-    //     }
-    //
-    //     var position = line.GetPoint(_localLength);
-    //     Move(position);
-    // }
-
 
     private void Move(Vector3 position)
     {
