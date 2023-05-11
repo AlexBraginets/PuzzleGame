@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fa93473d0329e4bac449dbec0358ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballsInitializer: {fileID: 1656985953}
+  _ballsContainer: {fileID: 1656985954}
   _abortMask:
     serializedVersion: 2
     m_Bits: 16896
@@ -1082,13 +1082,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefc9c0cbc080d6468cda20d6b6f77ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballsInitializers: []
+  _ballsProvider: {fileID: 0}
+  _ballsContainers: []
   _wayDatas: []
   _locations: []
   _ballLocators:
   - {fileID: 1351472298}
   - {fileID: 1226008962}
-  _ballsProvider: {fileID: 0}
+  _ballsAttacher: {fileID: 0}
 --- !u!114 &786762158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,6 +2130,7 @@ GameObject:
   - component: {fileID: 1528087685}
   - component: {fileID: 1528087686}
   - component: {fileID: 1528087687}
+  - component: {fileID: 1528087688}
   m_Layer: 9
   m_Name: Pipe
   m_TagString: Untagged
@@ -2182,9 +2184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefc9c0cbc080d6468cda20d6b6f77ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballsInitializers:
-  - {fileID: 2037611687}
-  - {fileID: 1656985953}
+  _ballsProvider: {fileID: 1528087687}
+  _ballsContainers:
+  - {fileID: 2037611688}
+  - {fileID: 1656985954}
   _wayDatas:
   - {fileID: 609037525}
   - {fileID: 617880981}
@@ -2194,7 +2197,7 @@ MonoBehaviour:
   _ballLocators:
   - {fileID: 1181164777}
   - {fileID: 2137467318}
-  _ballsProvider: {fileID: 1528087687}
+  _ballsAttacher: {fileID: 1528087688}
 --- !u!65 &1528087686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2223,6 +2226,18 @@ MonoBehaviour:
   _ballLocators:
   - {fileID: 1181164777}
   - {fileID: 2137467318}
+--- !u!114 &1528087688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528087682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23c240fbebe13c4286bea684311e439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570291460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +2539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1656985952}
   - component: {fileID: 1656985953}
+  - component: {fileID: 1656985954}
   m_Layer: 0
   m_Name: Balls initializer
   m_TagString: Untagged
@@ -2563,6 +2579,19 @@ MonoBehaviour:
   _ballPrefab: {fileID: 2130166467, guid: d2ab10bbbeca7894994387fe38719044, type: 3}
   _spawnLineIndex: 1
   _startPosition: {fileID: 1226008957}
+  _ballsContainer: {fileID: 1656985954}
+--- !u!114 &1656985954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656985951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a92fb6ec9e6df744bd76732f268770b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1680957306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,13 +2802,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefc9c0cbc080d6468cda20d6b6f77ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballsInitializers: []
+  _ballsProvider: {fileID: 0}
+  _ballsContainers: []
   _wayDatas: []
   _locations: []
   _ballLocators:
   - {fileID: 313963047}
   - {fileID: 843740702}
-  _ballsProvider: {fileID: 0}
+  _ballsAttacher: {fileID: 0}
 --- !u!114 &1825088685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,7 +2873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fa93473d0329e4bac449dbec0358ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballsInitializer: {fileID: 2037611687}
+  _ballsContainer: {fileID: 2037611688}
   _abortMask:
     serializedVersion: 2
     m_Bits: 33280
@@ -2875,6 +2905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037611686}
   - component: {fileID: 2037611687}
+  - component: {fileID: 2037611688}
   m_Layer: 0
   m_Name: Balls initializer
   m_TagString: Untagged
@@ -2914,6 +2945,19 @@ MonoBehaviour:
   _ballPrefab: {fileID: 2130166467, guid: d2ab10bbbeca7894994387fe38719044, type: 3}
   _spawnLineIndex: 1
   _startPosition: {fileID: 2137467317}
+  _ballsContainer: {fileID: 2037611688}
+--- !u!114 &2037611688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037611684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a92fb6ec9e6df744bd76732f268770b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2137467316
 GameObject:
   m_ObjectHideFlags: 0

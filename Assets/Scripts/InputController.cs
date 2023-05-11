@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    [SerializeField] private BallsInitializer _ballsInitializer;
-    private List<Ball> Balls => _ballsInitializer.Balls;
+    [SerializeField] private BallsContainer _ballsContainer;
+    private List<Ball> Balls => _ballsContainer.Balls;
 
     private bool isDragging;
     private Vector3 _lastPosition;

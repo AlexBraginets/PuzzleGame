@@ -7,11 +7,18 @@ public class Ball : MonoBehaviour
     [SerializeField]private int _lineIndex;
     private float _lineDistance;
     private float _distance;
-    public void UpdateWayData(WayDataHolder wayDataHolder) => this.wayDataHolder = wayDataHolder;
-    public void UpdatePosData(int lineIndex, float lineDistance)
+
+    public Transform Parent
     {
-        _lineIndex = lineIndex;
-        _lineDistance = lineDistance;
+        get => transform.parent;
+        set => transform.parent = value;
+    }
+    
+    public void UpdateWayData(WayDataHolder wayDataHolder) => this.wayDataHolder = wayDataHolder;
+    public void UpdatePosData(PosData data)
+    {
+        _lineIndex = data.LineIndex;
+        _lineDistance = data.LocalLength;
     }
     [SerializeField] private float deltaMoved;
     public void SetDistance(float distance)

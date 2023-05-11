@@ -3,66 +3,72 @@ using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
-    [SerializeField] private BallsInitializer[] _ballsInitializers;
+    [SerializeField] private PipeBallsProvider _ballsProvider;
+    [SerializeField] private BallsContainer[] _ballsContainers;
     [SerializeField] private WayDataHolder[] _wayDatas;
     [SerializeField] private Transform[] _locations;
     [SerializeField] private BallLocator[] _ballLocators;
-    [SerializeField] private PipeBallsProvider _ballsProvider;
+    [SerializeField] private BallsAttacher _ballsAttacher;
     private Transform _ballsParent;
     private Ball[] _balls;
     private int _currentLocation;
+    private BallsContainer _currentBallContainer => _ballsContainers[_currentLocation];
+
     public void Switch()
     {
         var balls = _ballsProvider.GetBalls();
+        _balls = balls;
         AttachBalls(balls);
-        SwapLocation();
+        int previousLocation =SwapLocation();
         DeattachBalls();
-        GetPosData(_currentLocation, out int[] wayIndex, out float[] localLength);
-        for (int i = 0; i < balls.Length; i++)
+        RefreshBallsWayData();
+        UpdateBallContainers(previousLocation);
+    }
+
+    private void UpdateBallContainers(int previousLocation)
+    {
+        _ballsContainers[previousLocation].RemoveRange(_balls);
+        _currentBallContainer.AddRange(_balls);
+    }
+
+    private void RefreshBallsWayData()
+    {
+        GetPosData(_currentLocation, out PosData[] data);
+        for (int i = 0; i < _balls.Length; i++)
         {
-            var ball = balls[i];
-            Debug.Log($"i: {i}");
-            ball.UpdatePosData(wayIndex[i], localLength[i]);
+            var ball = _balls[i];
+            ball.UpdatePosData(data[i]);
             ball.UpdateWayData(_wayDatas[_currentLocation]);
         }
     }
 
-    private void AttachBalls(Ball[] balls)
-    {
-        _ballsParent = balls[0].transform.parent;
-        _balls = balls;
-        foreach (var ball in _balls)
-        {
-            ball.transform.parent = transform;
-            _ballsInitializers[_currentLocation].Balls.Remove(ball);
-        }
-    }
+    private void AttachBalls(Ball[] balls) => _ballsAttacher.Attach(balls);
 
-    private void DeattachBalls()
-    {
-        foreach (var ball in _balls)
-        {
-            ball.transform.parent = _ballsParent;
-            _ballsInitializers[_currentLocation].Balls.Add(ball);
-        }
-    }
+    private void DeattachBalls() => _ballsAttacher.Deattach();
 
-    
-
-   
-
-    private void GetPosData(int locationIndex, out int[] wayIndex, out float[] distance)
+    private void GetPosData(int locationIndex, out PosData[] data)
     {
         var ballLocators = _locations[locationIndex].GetComponent<Pipe>()._ballLocators;
-        var posData = ballLocators.Select(bl => bl.GetComponent<PosData>());
-        wayIndex = posData.Select(x => x.wayIndex).ToArray();
-        distance = posData.Select(x => x.localLength).ToArray();
+        var posData = ballLocators.Select(bl => bl.GetComponent<PosDataProvider>());
+        data = posData.Select(x => x.GetPosData()).ToArray();
     }
 
-    private void SwapLocation()
+    private int SwapLocation()
+    {
+        int previousLocation = _currentLocation;
+        SwapCurrentLocationIndex();
+        UpdateLocation();
+        return previousLocation;
+    }
+
+    private void SwapCurrentLocationIndex()
     {
         _currentLocation++;
         _currentLocation %= 2;
+    }
+
+    private void UpdateLocation()
+    {
         transform.position = _locations[_currentLocation].position;
         transform.rotation = _locations[_currentLocation].rotation;
     }
