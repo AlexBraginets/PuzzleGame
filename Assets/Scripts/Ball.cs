@@ -10,14 +10,13 @@ public class Ball : MonoBehaviour
         set => transform.parent = value;
     }
 
-    public void UpdateLines(Line[] lines) => _wayData.Lines = lines;
-
-    public void UpdatePosData(PosData data)
+    public void UpdateWayData(WayData wayData)
     {
-        _wayData.LineIndex = data.LineIndex;
-        _wayData.LocalLength = data.LocalLength;
+        _wayData.Lines = wayData.Lines;
+        _wayData.LineIndex = wayData.LineIndex;
+        _wayData.LocalLength = wayData.LocalLength;
+        Move(_wayData.WorldPosiiton);
     }
-
     public void SetDistance(float distance) => _wayData.LocalLength = distance;
     public void SetLineIndex(int lineIndex) => _wayData.LineIndex = lineIndex;
 

@@ -1,5 +1,4 @@
 using UnityEngine;
-using Utils;
 
 public class BallsInitializer : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class BallsInitializer : MonoBehaviour
     [SerializeField] private int _spawnLineIndex;
     [SerializeField] private Transform _startPosition;
     [SerializeField] private BallsContainer _ballsContainer;
-    
+
     void Awake()
     {
         Init();
@@ -20,24 +19,17 @@ public class BallsInitializer : MonoBehaviour
         Line[] lines = wayDataHolder.Lines;
         float distance = GetStartDistance();
         float dx = 1.1f;
-        Line spawnLine = lines[_spawnLineIndex];
         WayData wayData = new WayData()
         {
             Lines = lines,
             LineIndex = _spawnLineIndex,
             LocalLength = distance
-        };   
+        };
         for (int i = 0; i < _ballsCount; i++)
         {
-            spawnLine = lines[wayData.LineIndex];
-            Vector3 position = spawnLine.GetPoint(wayData.LocalLength);
             Ball ball = Instantiate(_ballPrefab, transform);
             _ballsContainer.Add(ball);
-            ball.transform.position = position;
-            wayData.Simplify();
-            ball.UpdateLines(wayDataHolder.Lines);
-            ball.SetLineIndex(wayData.LineIndex);
-            ball.SetDistance(wayData.LocalLength);
+            ball.UpdateWayData(wayData);
             wayData.LocalLength += dx;
         }
     }
