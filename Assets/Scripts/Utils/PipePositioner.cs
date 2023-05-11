@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Utils
@@ -12,10 +11,7 @@ namespace Utils
         private void Awake()
         {
             Allign();
-            if (deactivate)
-            {
-                gameObject.SetActive(false);
-            }
+            if (deactivate) gameObject.SetActive(false);
         }
 
         [ContextMenu("Allign")]

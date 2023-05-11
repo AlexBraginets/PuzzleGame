@@ -1,60 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
     [SerializeField] private BallsInitializer[] _ballsInitializers;
     [SerializeField] private WayDataHolder[] _wayDatas;
-    [SerializeField] private int _ballsCount;
-    private Ball[] _balls;
     [SerializeField] private Transform[] _locations;
-    private int _currentLocation;
     [SerializeField] private BallLocator[] _ballLocators;
+    [SerializeField] private PipeBallsProvider _ballsProvider;
     private Transform _ballsParent;
-
-    public void AttachBalls(Ball[] balls)
-    {
-        _ballsParent = balls[0].transform.parent;
-        _balls = balls;
-        foreach (var ball in _balls)
-        {
-            ball.transform.parent = transform;
-            _ballsInitializers[_currentLocation].Balls.Remove(ball);
-        }
-    }
-
-    public void DeattachBalls()
-    {
-        foreach (var ball in _balls)
-        {
-            ball.transform.parent = _ballsParent;
-            _ballsInitializers[_currentLocation].Balls.Add(ball);
-        }
-    }
-
-    private Ball[] GetBalls()
-    {
-        List<Ball> balls = new List<Ball>();
-        foreach (var ballLocator in _ballLocators)
-        {
-            balls.Add(ballLocator.GetBall());
-        }
-
-        return balls.ToArray();
-    }
-
-    private void OnMouseDown()
-    {
-        
-    }
-
+    private Ball[] _balls;
+    private int _currentLocation;
     public void Switch()
     {
-        var balls = GetBalls();
+        var balls = _ballsProvider.GetBalls();
         AttachBalls(balls);
         SwapLocation();
         DeattachBalls();
@@ -67,6 +26,30 @@ public class Pipe : MonoBehaviour
             ball.UpdateWayData(_wayDatas[_currentLocation]);
         }
     }
+
+    private void AttachBalls(Ball[] balls)
+    {
+        _ballsParent = balls[0].transform.parent;
+        _balls = balls;
+        foreach (var ball in _balls)
+        {
+            ball.transform.parent = transform;
+            _ballsInitializers[_currentLocation].Balls.Remove(ball);
+        }
+    }
+
+    private void DeattachBalls()
+    {
+        foreach (var ball in _balls)
+        {
+            ball.transform.parent = _ballsParent;
+            _ballsInitializers[_currentLocation].Balls.Add(ball);
+        }
+    }
+
+    
+
+   
 
     private void GetPosData(int locationIndex, out int[] wayIndex, out float[] distance)
     {
