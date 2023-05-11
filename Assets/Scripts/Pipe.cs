@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
+    [SerializeField] private BallsInitializer[] _ballsInitializers;
     [SerializeField] private WayDataHolder[] _wayDatas;
     [SerializeField] private int _ballsCount;
     private Ball[] _balls;
@@ -22,6 +23,7 @@ public class Pipe : MonoBehaviour
         foreach (var ball in _balls)
         {
             ball.transform.parent = transform;
+            _ballsInitializers[_currentLocation].Balls.Remove(ball);
         }
     }
 
@@ -30,6 +32,7 @@ public class Pipe : MonoBehaviour
         foreach (var ball in _balls)
         {
             ball.transform.parent = _ballsParent;
+            _ballsInitializers[_currentLocation].Balls.Add(ball);
         }
     }
 

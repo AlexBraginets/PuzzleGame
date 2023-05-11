@@ -1,14 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
 public class BallsInitializer : MonoBehaviour
 {
-    [FormerlySerializedAs("_wayData")] [SerializeField] private WayDataHolder wayDataHolder;
+    [SerializeField] private WayDataHolder wayDataHolder;
     [SerializeField] private int _ballsCount;
     [SerializeField] private Ball _ballPrefab;
     [SerializeField] private int _spawnLineIndex;
     [SerializeField] private Transform _startPosition;
+    public List<Ball> Balls { get; private set; }
     void Awake()
     {
         Init();
@@ -16,6 +17,7 @@ public class BallsInitializer : MonoBehaviour
 
     private void Init()
     {
+        Balls = new List<Ball>();
         Line[] lines = wayDataHolder.Lines;
         float distance = GetStartDistance();
         float dx = 1.1f;
@@ -31,6 +33,7 @@ public class BallsInitializer : MonoBehaviour
             spawnLine = lines[wayData.LineIndex];
             Vector3 position = spawnLine.GetPoint(wayData.LocalLength);
             Ball ball = Instantiate(_ballPrefab, transform);
+            Balls.Add(ball);
             ball.transform.position = position;
             wayData.Simplify();
             ball.SetDistance(wayData.LocalLength);

@@ -1,14 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class InputController : MonoBehaviour
 {
-    [FormerlySerializedAs("_ballControllers")] [SerializeField]
-    private Ball[] _balls;
+    [SerializeField] private BallsInitializer _ballsInitializer;
+    private List<Ball> Balls => _ballsInitializer.Balls;
 
     private bool isDragging;
     private Vector3 _lastPosition;
@@ -26,7 +24,6 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            InitBalls();
             DOTween.To(() => 0f, x => MoveBalls(-x), _moveDistance, _moveDistance / _moveSpeed)
                 .OnComplete(() => _lastMoved = 0d);
             return;
@@ -36,7 +33,6 @@ public class InputController : MonoBehaviour
         {
             if (Abort()) return;
 
-            InitBalls();
             isDragging = true;
             _lastPosition = GetPosition();
             _deltaMoved = 0f;
@@ -68,7 +64,7 @@ public class InputController : MonoBehaviour
         if (!isDragging) return;
         var position = GetPosition();
         float dy = (position - _lastPosition).y < 0 ? 1f : -1f;
-        foreach (var ball in _balls)
+        foreach (var ball in Balls)
         {
             ball.Move((_lastPosition - position).magnitude * dy);
         }
@@ -81,16 +77,11 @@ public class InputController : MonoBehaviour
     {
         float dMove = (float) x - (float) _lastMoved;
         _lastMoved = x;
-        foreach (var ball in _balls)
+        foreach (var ball in Balls)
         {
             ball.Move(dMove);
         }
 
-    }
-
-    private void InitBalls()
-    {
-        _balls = FindObjectsOfType<Ball>();
     }
 
     private bool Abort()
