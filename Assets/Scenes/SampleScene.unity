@@ -629,6 +629,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450280747}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &522235158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522235160}
+  - component: {fileID: 522235159}
+  m_Layer: 0
+  m_Name: Balls Highlighter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &522235159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522235158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd70e8e76cbed14eb238ccd196207fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightDuration: 1
+  defaultColor: {r: 0.31730723, g: 1, b: 0, a: 0}
+  highlightColor: {r: 1, g: 0, b: 0.94482327, a: 0}
+--- !u!4 &522235160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522235158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558285807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1135,7 @@ MonoBehaviour:
   _ballsWayDataRefresher: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsAttacher: {fileID: 0}
+  _ballsHighlighter: {fileID: 0}
 --- !u!114 &786762158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2252,6 +2300,7 @@ MonoBehaviour:
   _ballsWayDataRefresher: {fileID: 1332570177}
   _pipeMover: {fileID: 1528087689}
   _ballsAttacher: {fileID: 1528087688}
+  _ballsHighlighter: {fileID: 522235159}
 --- !u!65 &1528087686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2877,6 +2926,7 @@ MonoBehaviour:
   _ballsWayDataRefresher: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsAttacher: {fileID: 0}
+  _ballsHighlighter: {fileID: 0}
 --- !u!114 &1825088685
 MonoBehaviour:
   m_ObjectHideFlags: 0
