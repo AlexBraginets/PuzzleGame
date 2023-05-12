@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayDataHolder>k__BackingField: {fileID: 0}
+  <WayDataHolder>k__BackingField: {fileID: 609037525}
   wayIndex: 1
   localLength: 4.4
 --- !u!114 &313963047
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayDataHolder>k__BackingField: {fileID: 0}
+  <WayDataHolder>k__BackingField: {fileID: 609037525}
   wayIndex: 1
   localLength: 3.3
 --- !u!114 &843740702
@@ -1742,7 +1742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayDataHolder>k__BackingField: {fileID: 0}
+  <WayDataHolder>k__BackingField: {fileID: 617880981}
   wayIndex: 1
   localLength: 3.3
 --- !u!114 &1226008962
@@ -1886,9 +1886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67ddac70ef67945a5df3d87070b794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wayDataHolders:
-  - {fileID: 609037525}
-  - {fileID: 617880981}
   _pipePosDataProviders:
   - {fileID: 1825088687}
   - {fileID: 786762160}
@@ -2115,7 +2112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62ce80cd61e39489cb004ae97722ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WayDataHolder>k__BackingField: {fileID: 0}
+  <WayDataHolder>k__BackingField: {fileID: 617880981}
   wayIndex: 1
   localLength: 4.4
 --- !u!114 &1351472298

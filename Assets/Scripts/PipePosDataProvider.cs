@@ -6,4 +6,6 @@ public class PipePosDataProvider : MonoBehaviour
    [SerializeField] private PosDataProvider[] _posDataProviders;
    public PosData[] PosDatas => _posDataProviders.Select(x => x.GetPosData()).ToArray();
 
+   public WayData[] WayDatas => _posDataProviders.Select(x => x.GetWayData()).ToArray();
+
 }

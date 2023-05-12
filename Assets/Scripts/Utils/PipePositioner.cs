@@ -10,12 +10,12 @@ namespace Utils
 
         private void Awake()
         {
-            Allign();
+            Align();
             if (deactivate) gameObject.SetActive(false);
         }
 
-        [ContextMenu("Allign")]
-        private void Allign()
+        [ContextMenu("Align")]
+        private void Align()
         {
             if (_waypoints.Length != 2)
             {

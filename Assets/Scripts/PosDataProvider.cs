@@ -16,6 +16,9 @@ public class PosDataProvider : MonoBehaviour
 
     public PosData GetPosData() => new PosData() {LineIndex = wayIndex, LocalLength = localLength};
 
+    public WayData GetWayData() => new WayData()
+        {Lines = WayDataHolder.Lines, LineIndex = wayIndex, LocalLength = localLength};
+
     private void GetPosData(Vector3 pos, out int wayIndex, out float localLength)
     {
         Line[] lines = WayDataHolder.Lines;
