@@ -17,13 +17,8 @@ public class Pipe : MonoBehaviour
         var balls = _ballsProvider.GetBalls();
         _balls = balls;
         SwapLocation(out int previousLocation);
-        return;;
-        // _balls = balls;
-        // AttachBalls(balls);
-        // SwapLocation(out int previousLocation);
-        // DeattachBalls();
-        // RefreshBallsWayData();
-        // UpdateBallContainers(previousLocation);
+        UpdateBallContainers(previousLocation);
+        RefreshBallsWayData();
     }
 
     private void RefreshBallsWayData() => _ballsWayDataRefresher.Refresh(_currentLocation, _balls);

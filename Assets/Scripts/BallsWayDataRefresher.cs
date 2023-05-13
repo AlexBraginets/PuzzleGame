@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BallsWayDataRefresher : MonoBehaviour
 {
-    [SerializeField] private PipePosDataProvider[] _pipePosDataProviders;
+    [SerializeField] private PipeWayDataProvider[] _pipeWayDataProviders;
 
     public void Refresh(int wayIndex, Ball[] balls)
     {
@@ -10,13 +10,14 @@ public class BallsWayDataRefresher : MonoBehaviour
         for (int i = 0; i < balls.Length; i++)
         {
             var ball = balls[i];
-            ball.UpdateWayData(data[i]);
+            var wayData = data[i];
+            ball.UpdateWayData(wayData);
         }
     }
 
     private void GetWayData(int wayIndex, out WayData[] data)
     {
-        var posDataProvider = _pipePosDataProviders[wayIndex];
-        data = posDataProvider.WayDatas;
+        var wayDataProvider = _pipeWayDataProviders[wayIndex];
+        data = wayDataProvider.WayDatas;
     }
 }

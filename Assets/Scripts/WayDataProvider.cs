@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PosDataProvider : MonoBehaviour
+public class WayDataProvider : MonoBehaviour
 {
     [field: SerializeField] public WayDataHolder WayDataHolder { get; private set; }
     public int wayIndex;
@@ -13,8 +13,6 @@ public class PosDataProvider : MonoBehaviour
         pos.z = 0f;
         GetPosData(pos, out wayIndex, out localLength);
     }
-
-    public PosData GetPosData() => new PosData() {LineIndex = wayIndex, LocalLength = localLength};
 
     public WayData GetWayData() => new WayData()
         {Lines = WayDataHolder.Lines, LineIndex = wayIndex, LocalLength = localLength};
