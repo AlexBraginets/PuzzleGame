@@ -4,6 +4,7 @@ using UnityEngine;
 public class TubeSwitcher : MonoBehaviour
 {
     [SerializeField] private LayerMask _tubeMask;
+    [SerializeField] private Pipe[] _pipes;
 
     private void Update()
     {
@@ -23,6 +24,10 @@ public class TubeSwitcher : MonoBehaviour
             Debug.LogError("No Pipe present.", hit.transform);
             throw new NotImplementedException("No Pipe present.");
         }
-        tube.Switch();
+
+        foreach (var pipe in _pipes)
+        {
+            pipe.Switch();
+        }
     }
 }

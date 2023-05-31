@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 public class RandomColor : MonoBehaviour
 {
     [SerializeField] private MeshRenderer _meshRenderer;
-
+    [SerializeField] private Color _color;
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
@@ -14,6 +14,7 @@ public class RandomColor : MonoBehaviour
     private void SetRandomColor()
     {
         var rndColor = Random.ColorHSV();
+        rndColor = _color;
         SetColor(rndColor);
     }
 
