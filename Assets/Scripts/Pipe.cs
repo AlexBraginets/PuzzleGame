@@ -10,7 +10,7 @@ public class Pipe : MonoBehaviour
     [SerializeField] private BallsHighlighter _ballsHighlighter;
     [SerializeField] private bool[] refreshMap;
     private Ball[] _balls;
-    private int _currentLocation;
+    [SerializeField] private int _currentLocation;
     private BallsContainer CurrentBallContainer => _ballsContainers[_currentLocation];
 
     public void Switch()
@@ -51,6 +51,6 @@ public class Pipe : MonoBehaviour
     private void SwapCurrentLocationIndex()
     {
         _currentLocation++;
-        _currentLocation %= 2;
+        _currentLocation %= 3;
     }
 }
