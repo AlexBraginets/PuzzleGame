@@ -8,6 +8,7 @@ public class Pipe : MonoBehaviour
     [SerializeField] private PipeMover _pipeMover;
     [SerializeField] private BallsAttacher _ballsAttacher;
     [SerializeField] private BallsHighlighter _ballsHighlighter;
+    [SerializeField] private bool[] refreshMap;
     private Ball[] _balls;
     private int _currentLocation;
     private BallsContainer CurrentBallContainer => _ballsContainers[_currentLocation];
@@ -18,7 +19,8 @@ public class Pipe : MonoBehaviour
         _balls = balls;
         SwapLocation(out int previousLocation);
         UpdateBallContainers(previousLocation);
-        RefreshBallsWayData();
+        if (refreshMap[_currentLocation])
+            RefreshBallsWayData();
     }
 
     private void RefreshBallsWayData() => _ballsWayDataRefresher.Refresh(_currentLocation, _balls);

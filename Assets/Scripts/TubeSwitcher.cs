@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TubeSwitcher : MonoBehaviour
 {
     [SerializeField] private LayerMask _tubeMask;
-    void Update()
+
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {

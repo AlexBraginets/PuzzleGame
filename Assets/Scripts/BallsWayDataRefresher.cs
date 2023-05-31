@@ -7,6 +7,11 @@ public class BallsWayDataRefresher : MonoBehaviour
     public void Refresh(int wayIndex, Ball[] balls)
     {
         GetWayData(wayIndex, out WayData[] data);
+        InjectWayData(balls, data);
+    }
+
+    private void InjectWayData(Ball[] balls, WayData[] data)
+    {
         for (int i = 0; i < balls.Length; i++)
         {
             var ball = balls[i];
