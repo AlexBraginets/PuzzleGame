@@ -1,14 +1,12 @@
-using System;
 using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
     [SerializeField] private PipeBallsProvider _ballsProvider;
     [SerializeField] private BallsContainer[] _ballsContainers;
-    [SerializeField] private BallsWayDataRefresher _ballsWayDataRefresher;
     [SerializeField] private PipeMover _pipeMover;
     [SerializeField] private BallsAttacher _ballsAttacher;
-    [SerializeField] private BallsHighlighter _ballsHighlighter;
+    [SerializeField] private BallsWayDataRefresher _ballsWayDataRefresher;
     [SerializeField] private bool[] refreshMap;
     private Ball[] _balls;
     [SerializeField] private int _currentLocation;
@@ -16,14 +14,11 @@ public class Pipe : MonoBehaviour
 
     public void Switch()
     {
-        var balls = _ballsProvider.GetBalls();
-        _balls = balls;
-        _pipeMover.OnLocationUpdated += () => Debug.Log("Log 1");
+        _balls = _ballsProvider.GetBalls();
         SwapLocation(out int previousLocation);
         UpdateBallContainers(previousLocation);
         if (refreshMap[_currentLocation])
             _pipeMover.OnLocationUpdated += RefreshBallsWayData;
-        _pipeMover.OnLocationUpdated += () => Debug.Log("Log 2");
     }
 
     private void RefreshBallsWayData() => _ballsWayDataRefresher.Refresh(_currentLocation, _balls);
@@ -35,7 +30,7 @@ public class Pipe : MonoBehaviour
     }
 
 
-    private void AttachBalls(Ball[] balls) => _ballsAttacher.Attach(balls);
+    private void AttachBalls() => _ballsAttacher.Attach(_balls);
 
     private void DeattachBalls() => _ballsAttacher.Deattach();
 
@@ -44,7 +39,7 @@ public class Pipe : MonoBehaviour
     {
         previousLocation = _currentLocation;
         SwapCurrentLocationIndex();
-        AttachBalls(_balls);
+        AttachBalls();
         UpdateLocation();
         _pipeMover.OnLocationUpdated += DeattachBalls;
     }
