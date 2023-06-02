@@ -5,7 +5,6 @@ public class Pipe : MonoBehaviour
     [SerializeField] private PipeBallsProvider _ballsProvider;
     [SerializeField] private BallsContainer[] _ballsContainers;
     [SerializeField] private PipeMover _pipeMover;
-    [SerializeField] private BallsAttacher _ballsAttacher;
     [SerializeField] private BallsWayDataRefresher _ballsWayDataRefresher;
     [SerializeField] private bool[] refreshMap;
     private Ball[] _balls;
@@ -28,24 +27,15 @@ public class Pipe : MonoBehaviour
         _ballsContainers[previousLocation].RemoveRange(_balls);
         CurrentBallContainer.AddRange(_balls);
     }
-
-
-    private void AttachBalls() => _ballsAttacher.Attach(_balls);
-
-    private void DeattachBalls() => _ballsAttacher.Deattach();
-
-
     private void SwapLocation(out int previousLocation)
     {
         previousLocation = _currentLocation;
         SwapCurrentLocationIndex();
-        AttachBalls();
         UpdateLocation();
-        _pipeMover.OnLocationUpdated += DeattachBalls;
     }
 
     private void UpdateLocation() =>
-        _pipeMover.UpdateLocation(_currentLocation);
+        _pipeMover.UpdateLocation(_currentLocation, _balls);
 
     private void SwapCurrentLocationIndex()
     {
