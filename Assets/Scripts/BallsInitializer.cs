@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class BallsInitializer : MonoBehaviour
 {
-    [SerializeField] private WayDataHolder wayDataHolder;
     [SerializeField] private int _ballsCount;
-    [SerializeField] private Ball _ballPrefab;
-    [SerializeField] private int _spawnLineIndex;
-    [SerializeField] private Transform _startPosition;
+    [SerializeField] private WayDataHolder wayDataHolder;
     [SerializeField] private BallsContainer _ballsContainer;
 
-    void Awake()
+    [Header("Start spawn config")]
+    [SerializeField] private int _spawnLineIndex;
+    [SerializeField] private Transform _startPosition;
+    
+    [Header("Ball prefabs")] 
+    [SerializeField] private Ball _ballPrefab;
+    [SerializeField] private Ball _specialBallPrefab;
+
+
+    private void Awake()
     {
         Init();
     }
@@ -17,7 +23,7 @@ public class BallsInitializer : MonoBehaviour
     private void Init()
     {
         Line[] lines = wayDataHolder.Lines;
-        float distance = GetStartDistance();
+        float distance = GetStartDistance(lines);
         float dx = 1.1f;
         WayData wayData = new WayData()
         {
@@ -27,16 +33,17 @@ public class BallsInitializer : MonoBehaviour
         };
         for (int i = 0; i < _ballsCount; i++)
         {
-            Ball ball = Instantiate(_ballPrefab, transform);
+            Ball ball = Instantiate(GetBallPrefab(i), transform);
             _ballsContainer.Add(ball);
             ball.UpdateWayData(wayData);
             wayData.LocalLength += dx;
         }
     }
 
-    private float GetStartDistance()
+    private Ball GetBallPrefab(int index) => index == _ballsCount - 1 ? _specialBallPrefab : _ballPrefab;
+
+    private float GetStartDistance(Line[] lines)
     {
-        Line[] lines = wayDataHolder.Lines;
         Line spawnLine = lines[_spawnLineIndex];
         Vector3 startPosition = _startPosition.position;
         var closestPoint = spawnLine.ClosestPoint(startPosition, out float distance);

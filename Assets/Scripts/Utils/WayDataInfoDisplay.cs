@@ -1,12 +1,11 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Utils
 {
     public class WayDataInfoDisplay : MonoBehaviour
     {
-        [FormerlySerializedAs("_wayData")] [SerializeField] private WayDataHolder wayDataHolder;
+        [SerializeField] private WayDataHolder wayDataHolder;
 
         [ContextMenu("Log info")]
         public void LogInfo()

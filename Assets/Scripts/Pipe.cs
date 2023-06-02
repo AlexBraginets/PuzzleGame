@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Pipe : MonoBehaviour
@@ -17,10 +18,12 @@ public class Pipe : MonoBehaviour
     {
         var balls = _ballsProvider.GetBalls();
         _balls = balls;
+        _pipeMover.OnLocationUpdated += () => Debug.Log("Log 1");
         SwapLocation(out int previousLocation);
         UpdateBallContainers(previousLocation);
         if (refreshMap[_currentLocation])
-            RefreshBallsWayData();
+            _pipeMover.OnLocationUpdated += RefreshBallsWayData;
+        _pipeMover.OnLocationUpdated += () => Debug.Log("Log 2");
     }
 
     private void RefreshBallsWayData() => _ballsWayDataRefresher.Refresh(_currentLocation, _balls);
@@ -43,10 +46,11 @@ public class Pipe : MonoBehaviour
         SwapCurrentLocationIndex();
         AttachBalls(_balls);
         UpdateLocation();
-        DeattachBalls();
+        _pipeMover.OnLocationUpdated += DeattachBalls;
     }
 
-    private void UpdateLocation() => _pipeMover.UpdateLocation(_currentLocation);
+    private void UpdateLocation() =>
+        _pipeMover.UpdateLocation(_currentLocation);
 
     private void SwapCurrentLocationIndex()
     {
