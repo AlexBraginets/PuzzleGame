@@ -7,6 +7,8 @@ public class MoveBallFinalizer : MonoBehaviour
     private BallMover _ballMover;
     private float _lastMoved;
     private float _deltaMoved;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _finalizeAudio;
 
     public void Finalize(float deltaMoved, BallMover ballMover)
     {
@@ -15,6 +17,12 @@ public class MoveBallFinalizer : MonoBehaviour
         float dx = GetFinalDX();
         _lastMoved = 0f;
         DOTween.To(() => 0f, MoveBalls, dx, Mathf.Abs(dx / _moveSpeed));
+        PlayAudio();
+    }
+
+    private void PlayAudio()
+    {
+        _audioSource.PlayOneShot(_finalizeAudio);
     }
 
     private float GetFinalDX()

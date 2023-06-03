@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class BallsInitializer : MonoBehaviour
 {
+    [SerializeField] private int _containerIndex;
     [SerializeField] private int _ballsCount;
     [SerializeField] private WayDataHolder wayDataHolder;
     [SerializeField] private BallsContainer _ballsContainer;
 
-    [Header("Start spawn config")]
-    [SerializeField] private int _spawnLineIndex;
+    [Header("Start spawn config")] [SerializeField]
+    private int _spawnLineIndex;
+
     [SerializeField] private Transform _startPosition;
-    
-    [Header("Ball prefabs")] 
-    [SerializeField] private Ball _ballPrefab;
+
+    [Header("Ball prefabs")] [SerializeField]
+    private Ball _ballPrefab;
+
     [SerializeField] private Ball _specialBallPrefab;
 
 
@@ -34,6 +37,7 @@ public class BallsInitializer : MonoBehaviour
         for (int i = 0; i < _ballsCount; i++)
         {
             Ball ball = Instantiate(GetBallPrefab(i), transform);
+            ball.ContainerIndex = _containerIndex;
             _ballsContainer.Add(ball);
             ball.UpdateWayData(wayData);
             wayData.LocalLength += dx;

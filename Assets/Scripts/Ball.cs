@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public int ContainerIndex;
     [SerializeField] private WayData _wayData = new WayData();
 
     public Transform Parent

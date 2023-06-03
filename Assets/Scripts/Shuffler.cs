@@ -12,6 +12,7 @@ public class Shuffler : MonoBehaviour
     [SerializeField] private float _springSpeed;
     private System.Random _rnd = new System.Random();
     [SerializeField] private float _shuffleTimeScale;
+
     private int _shuffleIndex
     {
         get
@@ -37,26 +38,27 @@ public class Shuffler : MonoBehaviour
     {
         float y = 0;
         int shuffleIndex = this._shuffleIndex;
+        float duration = _duration * (float) _rnd.NextDouble();
         DOTween.To(() => 0f, x =>
         {
             MoveBalls(x - y, _ballsContainers[shuffleIndex]);
             y = x;
-        }, _speed * _duration, _duration).onComplete += () =>
+        }, _speed * duration, duration).onComplete += () =>
         {
-           StabilizeBalls(_speed*_duration, shuffleIndex);
-           DOVirtual.DelayedCall(1.1f / _springSpeed, () =>
-           {
-               _tubeSwitcher.Switch();
-               _shuffleCount--;
-               if (_shuffleCount > 0)
-               {
-                   DOVirtual.DelayedCall(.22f, Shuffle);
-               }
-               else
-               {
-                   Time.timeScale = 1f;
-               }
-           });
+            StabilizeBalls(_speed * duration, shuffleIndex);
+            DOVirtual.DelayedCall(1.1f / _springSpeed, () =>
+            {
+                _tubeSwitcher.Switch();
+                _shuffleCount--;
+                if (_shuffleCount > 0)
+                {
+                    DOVirtual.DelayedCall(.22f, Shuffle);
+                }
+                else
+                {
+                    Time.timeScale = 1f;
+                }
+            });
         };
     }
 
