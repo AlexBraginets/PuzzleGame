@@ -3,9 +3,24 @@ using UnityEngine;
 public class BallsWayDataRefresher : MonoBehaviour
 {
     [SerializeField] private PipeWayDataProvider[] _pipeWayDataProviders;
+    [SerializeField] private bool[] refreshMap;
 
-    public void Refresh(int wayIndex, Ball[] balls)
+    private Pipe _pipe;
+
+    public void Init(Pipe pipe)
     {
+        _pipe = pipe;
+        pipe.OnLocationUpdated += Refresh;
+    }
+
+    private void Refresh()
+    {
+        Refresh(_pipe.CurrentLocation.value, _pipe.Balls);
+    }
+
+    private void Refresh(int wayIndex, Ball[] balls)
+    {
+        if (!refreshMap[wayIndex]) return;
         GetWayData(wayIndex, out WayData[] data);
         InjectWayData(balls, data);
     }

@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainers: []
+  _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
   refreshMap: 
@@ -1846,7 +1846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainers: []
+  _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
   refreshMap: 
@@ -2122,6 +2122,7 @@ GameObject:
   - component: {fileID: 723934294}
   - component: {fileID: 723934293}
   - component: {fileID: 723934292}
+  - component: {fileID: 723934299}
   m_Layer: 9
   m_Name: Pipe 2
   m_TagString: Untagged
@@ -2200,10 +2201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 723934294}
-  _ballsContainers:
-  - {fileID: 2037611688}
-  - {fileID: 1656985954}
-  - {fileID: 637749436}
+  _ballsContainerHolder: {fileID: 723934299}
   _pipeMover: {fileID: 723934292}
   _ballsWayDataRefresher: {fileID: 1052976987}
   refreshMap: 010100
@@ -2226,6 +2224,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -180, y: 146.97, z: -720}
+--- !u!114 &723934299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723934291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114a368e5cd0bbd47b094755d9ae306b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballsContainers:
+  - {fileID: 2037611688}
+  - {fileID: 1656985954}
+  - {fileID: 637749436}
 --- !u!1 &786762156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,7 +2272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainers: []
+  _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
   refreshMap: 
@@ -2956,6 +2970,7 @@ MonoBehaviour:
   - {fileID: 1825088687}
   - {fileID: 786762160}
   - {fileID: 0}
+  refreshMap: 010100
 --- !u!4 &1052976988
 Transform:
   m_ObjectHideFlags: 0
@@ -3703,6 +3718,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1825088687}
   - {fileID: 786762160}
+  refreshMap: 000101
 --- !u!4 &1332570178
 Transform:
   m_ObjectHideFlags: 0
@@ -3991,7 +4007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainers: []
+  _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
   refreshMap: 
@@ -4272,6 +4288,7 @@ GameObject:
   - component: {fileID: 1528087687}
   - component: {fileID: 1528087688}
   - component: {fileID: 1528087689}
+  - component: {fileID: 1528087690}
   m_Layer: 9
   m_Name: Pipe 1
   m_TagString: Untagged
@@ -4326,10 +4343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 1528087687}
-  _ballsContainers:
-  - {fileID: 151223143}
-  - {fileID: 2037611688}
-  - {fileID: 1656985954}
+  _ballsContainerHolder: {fileID: 1528087690}
   _pipeMover: {fileID: 1528087689}
   _ballsWayDataRefresher: {fileID: 1332570177}
   refreshMap: 000101
@@ -4392,6 +4406,22 @@ MonoBehaviour:
   - {fileID: 1825088686}
   - {fileID: 786762159}
   _ballsAttacher: {fileID: 1528087688}
+--- !u!114 &1528087690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528087682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114a368e5cd0bbd47b094755d9ae306b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballsContainers:
+  - {fileID: 151223143}
+  - {fileID: 2037611688}
+  - {fileID: 1656985954}
 --- !u!1 &1570291460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,7 +5245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainers: []
+  _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
   refreshMap: 
@@ -5928,7 +5958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainers: []
+  _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
   refreshMap: 
