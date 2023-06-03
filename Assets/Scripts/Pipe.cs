@@ -5,22 +5,25 @@ using ZergRush.ReactiveCore;
 public class Pipe : MonoBehaviour
 {
     [SerializeField] private PipeBallsProvider _ballsProvider;
-    [SerializeField] private BallsContainerHolder _ballsContainerHolder;
+
+    [Header("Subscribers")] [SerializeField]
+    private BallsContainerHolder _ballsContainerHolder;
+
     [SerializeField] private PipeMover _pipeMover;
     [SerializeField] private BallsWayDataRefresher _ballsWayDataRefresher;
-    private Ball[] _balls;
-    public Ball[] Balls => _balls;
-    [SerializeField] private int _currentLocation;
-    public Cell<int> CurrentLocation;
+    public Ball[] Balls { get; private set; }
+    [SerializeField] private IndexConfig _indexConfig;
+    [HideInInspector] public Cell<int> CurrentLocation = new Cell<int>();
     public event Action OnLocationUpdated;
 
     public void LocationUpdated()
     {
         OnLocationUpdated?.Invoke();
     }
+
     private void Awake()
     {
-        CurrentLocation = new Cell<int>(_currentLocation);
+        _indexConfig.Init(CurrentLocation);
     }
 
     private void Start()
@@ -32,13 +35,7 @@ public class Pipe : MonoBehaviour
 
     public void Switch()
     {
-        _balls = _ballsProvider.GetBalls();
-        SwapCurrentLocationIndex();
-    }
-    private void SwapCurrentLocationIndex()
-    {
-        _currentLocation++;
-        _currentLocation %= 3;
-        CurrentLocation.value = _currentLocation;
+        Balls = _ballsProvider.GetBalls();
+        _indexConfig.Next();
     }
 }

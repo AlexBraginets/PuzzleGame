@@ -174,8 +174,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
-  refreshMap: 
-  _currentLocation: 0
+  _indexConfig: {fileID: 0}
 --- !u!114 &151223141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,8 +1848,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
-  refreshMap: 
-  _currentLocation: 0
+  _indexConfig: {fileID: 0}
 --- !u!114 &637749439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,8 +2202,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 723934299}
   _pipeMover: {fileID: 723934292}
   _ballsWayDataRefresher: {fileID: 1052976987}
-  refreshMap: 010100
-  _currentLocation: 1
+  _indexConfig: {fileID: 11400000, guid: 70039c3481965054785019390226838e, type: 2}
 --- !u!4 &723934298
 Transform:
   m_ObjectHideFlags: 0
@@ -2275,8 +2272,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
-  refreshMap: 
-  _currentLocation: 0
+  _indexConfig: {fileID: 0}
 --- !u!114 &786762158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4010,8 +4006,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
-  refreshMap: 
-  _currentLocation: 0
+  _indexConfig: {fileID: 0}
 --- !u!114 &1431783468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4346,8 +4341,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 1528087690}
   _pipeMover: {fileID: 1528087689}
   _ballsWayDataRefresher: {fileID: 1332570177}
-  refreshMap: 000101
-  _currentLocation: 1
+  _indexConfig: {fileID: 11400000, guid: f2ae1edfcc4b1da41b2a6399792560b8, type: 2}
 --- !u!65 &1528087686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5248,8 +5242,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
-  refreshMap: 
-  _currentLocation: 0
+  _indexConfig: {fileID: 0}
 --- !u!114 &1825088685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5961,8 +5954,7 @@ MonoBehaviour:
   _ballsContainerHolder: {fileID: 0}
   _pipeMover: {fileID: 0}
   _ballsWayDataRefresher: {fileID: 0}
-  refreshMap: 
-  _currentLocation: 0
+  _indexConfig: {fileID: 0}
 --- !u!114 &2083033424
 MonoBehaviour:
   m_ObjectHideFlags: 0
