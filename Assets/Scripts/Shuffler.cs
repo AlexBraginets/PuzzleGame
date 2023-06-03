@@ -12,7 +12,7 @@ public class Shuffler : MonoBehaviour
     [SerializeField] private float _springSpeed;
     private System.Random _rnd = new System.Random();
     [SerializeField] private float _shuffleTimeScale;
-
+    public event Action OnFinished; 
     private int _shuffleIndex
     {
         get
@@ -57,6 +57,7 @@ public class Shuffler : MonoBehaviour
                 else
                 {
                     Time.timeScale = 1f;
+                    OnFinished?.Invoke();
                 }
             });
         };
