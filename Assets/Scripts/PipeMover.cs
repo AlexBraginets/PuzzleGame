@@ -6,7 +6,14 @@ public class PipeMover : MonoBehaviour
     [SerializeField] private float _animationDuration = .2f;
     [SerializeField] private Transform[] _locations;
     [SerializeField] private BallsAttacher _ballsAttacher;
-    private Pipe _pipe;
+    [SerializeField] private Pipe _pipe;
+
+    private void Start()
+    {
+        Init(_pipe);
+    }
+
+
     public void Init(Pipe pipe)
     {
         _pipe = pipe;

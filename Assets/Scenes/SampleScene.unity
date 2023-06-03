@@ -171,9 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainerHolder: {fileID: 0}
-  _pipeMover: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
   _indexConfig: {fileID: 0}
 --- !u!114 &151223141
 MonoBehaviour:
@@ -1845,9 +1842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainerHolder: {fileID: 0}
-  _pipeMover: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
   _indexConfig: {fileID: 0}
 --- !u!114 &637749439
 MonoBehaviour:
@@ -2146,6 +2140,7 @@ MonoBehaviour:
   - {fileID: 2083033425}
   - {fileID: 637749440}
   _ballsAttacher: {fileID: 723934293}
+  _pipe: {fileID: 723934296}
 --- !u!114 &723934293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2199,9 +2194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 723934294}
-  _ballsContainerHolder: {fileID: 723934299}
-  _pipeMover: {fileID: 723934292}
-  _ballsWayDataRefresher: {fileID: 1052976987}
   _indexConfig: {fileID: 11400000, guid: 70039c3481965054785019390226838e, type: 2}
 --- !u!4 &723934298
 Transform:
@@ -2237,6 +2229,7 @@ MonoBehaviour:
   - {fileID: 2037611688}
   - {fileID: 1656985954}
   - {fileID: 637749436}
+  _pipe: {fileID: 723934296}
 --- !u!1 &786762156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,9 +2262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainerHolder: {fileID: 0}
-  _pipeMover: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
   _indexConfig: {fileID: 0}
 --- !u!114 &786762158
 MonoBehaviour:
@@ -2967,6 +2957,7 @@ MonoBehaviour:
   - {fileID: 786762160}
   - {fileID: 0}
   refreshMap: 010100
+  _pipe: {fileID: 723934296}
 --- !u!4 &1052976988
 Transform:
   m_ObjectHideFlags: 0
@@ -3715,6 +3706,7 @@ MonoBehaviour:
   - {fileID: 1825088687}
   - {fileID: 786762160}
   refreshMap: 000101
+  _pipe: {fileID: 1528087685}
 --- !u!4 &1332570178
 Transform:
   m_ObjectHideFlags: 0
@@ -4003,9 +3995,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainerHolder: {fileID: 0}
-  _pipeMover: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
   _indexConfig: {fileID: 0}
 --- !u!114 &1431783468
 MonoBehaviour:
@@ -4338,9 +4327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 1528087687}
-  _ballsContainerHolder: {fileID: 1528087690}
-  _pipeMover: {fileID: 1528087689}
-  _ballsWayDataRefresher: {fileID: 1332570177}
   _indexConfig: {fileID: 11400000, guid: f2ae1edfcc4b1da41b2a6399792560b8, type: 2}
 --- !u!65 &1528087686
 BoxCollider:
@@ -4400,6 +4386,7 @@ MonoBehaviour:
   - {fileID: 1825088686}
   - {fileID: 786762159}
   _ballsAttacher: {fileID: 1528087688}
+  _pipe: {fileID: 1528087685}
 --- !u!114 &1528087690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4416,6 +4403,7 @@ MonoBehaviour:
   - {fileID: 151223143}
   - {fileID: 2037611688}
   - {fileID: 1656985954}
+  _pipe: {fileID: 1528087685}
 --- !u!1 &1570291460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5239,9 +5227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainerHolder: {fileID: 0}
-  _pipeMover: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
   _indexConfig: {fileID: 0}
 --- !u!114 &1825088685
 MonoBehaviour:
@@ -5951,9 +5936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsProvider: {fileID: 0}
-  _ballsContainerHolder: {fileID: 0}
-  _pipeMover: {fileID: 0}
-  _ballsWayDataRefresher: {fileID: 0}
   _indexConfig: {fileID: 0}
 --- !u!114 &2083033424
 MonoBehaviour:

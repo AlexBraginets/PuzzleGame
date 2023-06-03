@@ -1,11 +1,18 @@
+using System;
 using UnityEngine;
 
 public class BallsContainerHolder : MonoBehaviour
 {
     [SerializeField] private BallsContainer[] _ballsContainers;
 
-    private Pipe _pipe;
+    [SerializeField] private Pipe _pipe;
     private int _previousLocationIndex;
+
+    private void Start()
+    {
+        Init(_pipe);
+    }
+
     public void Init(Pipe pipe)
     {
         _pipe = pipe;

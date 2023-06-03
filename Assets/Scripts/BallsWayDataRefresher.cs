@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BallsWayDataRefresher : MonoBehaviour
@@ -5,7 +6,12 @@ public class BallsWayDataRefresher : MonoBehaviour
     [SerializeField] private PipeWayDataProvider[] _pipeWayDataProviders;
     [SerializeField] private bool[] refreshMap;
 
-    private Pipe _pipe;
+    [SerializeField] private Pipe _pipe;
+
+    private void Start()
+    {
+        Init(_pipe);
+    }
 
     public void Init(Pipe pipe)
     {

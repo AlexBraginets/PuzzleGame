@@ -4,15 +4,19 @@ using UnityEngine;
 public class PipeBallsProvider : MonoBehaviour
 {
     [SerializeField] private BallLocator[] _ballLocators;
-
+    private int _lastFrame = -1;
+    private Ball[] _balls;
     public Ball[] GetBalls()
     {
+        if (Time.frameCount == _lastFrame) return _balls;
+        _lastFrame = Time.frameCount;
         List<Ball> balls = new List<Ball>();
         foreach (var ballLocator in _ballLocators)
         {
             balls.Add(ballLocator.GetBall());
         }
 
-        return balls.ToArray();
+        _balls = balls.ToArray();
+        return _balls;
     }
 }
