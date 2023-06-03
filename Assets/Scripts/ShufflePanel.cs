@@ -14,7 +14,7 @@ public class ShufflePanel : MonoBehaviour
    private void Shuffle()
    {
       _shuffleButton.enabled = false;
-      _shuffler.enabled = true;
+      _shuffler.Shuffle();
       _shuffler.OnFinished += () => gameObject.SetActive(false);
 
    }

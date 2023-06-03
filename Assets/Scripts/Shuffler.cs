@@ -6,14 +6,15 @@ public class Shuffler : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _duration;
-    [SerializeField] private BallsContainer[] _ballsContainers;
+    [SerializeField] private BallMover[] _ballMovers;
     [SerializeField] private TubeSwitcher _tubeSwitcher;
     [SerializeField] private int _shuffleCount = 10;
     [SerializeField] private float _springSpeed;
     private System.Random _rnd = new System.Random();
     [SerializeField] private float _shuffleTimeScale;
-    public event Action OnFinished; 
-    private int _shuffleIndex
+    public event Action OnFinished;
+
+    private int ShuffleIndex
     {
         get
         {
@@ -28,24 +29,21 @@ public class Shuffler : MonoBehaviour
         }
     }
 
-    private void Start()
+
+    public void Shuffle()
     {
         Time.timeScale = _shuffleTimeScale;
-        Shuffle();
-    }
-
-    private void Shuffle()
-    {
         float y = 0;
-        int shuffleIndex = this._shuffleIndex;
-        float duration = _duration * (float) _rnd.NextDouble();
+        int shuffleIndex = ShuffleIndex;
+        float shiftAmount = ShiftAmount;
+        float duration = ShiftAmount / _speed;
         DOTween.To(() => 0f, x =>
         {
-            MoveBalls(x - y, _ballsContainers[shuffleIndex]);
+            _ballMovers[shuffleIndex].Move(x - y);
             y = x;
-        }, _speed * duration, duration).onComplete += () =>
+        }, shiftAmount, duration).onComplete += () =>
         {
-            StabilizeBalls(_speed * duration, shuffleIndex);
+            StabilizeBalls(shiftAmount, shuffleIndex);
             DOVirtual.DelayedCall(1.1f / _springSpeed, () =>
             {
                 _tubeSwitcher.Switch();
@@ -63,13 +61,8 @@ public class Shuffler : MonoBehaviour
         };
     }
 
-    private void MoveBalls(float dx, BallsContainer ballsContainer)
-    {
-        foreach (var ball in ballsContainer.Balls)
-        {
-            ball.Move(dx);
-        }
-    }
+    private float ShiftAmount => _duration * _speed * (float) _rnd.NextDouble();
+
 
     private void StabilizeBalls(float _deltaMoved, int shuffleIndex)
     {
@@ -89,7 +82,7 @@ public class Shuffler : MonoBehaviour
         float y = 0;
         DOTween.To(() => 0f, x =>
         {
-            MoveBalls(x - y, _ballsContainers[shuffleIndex]);
+            _ballMovers[shuffleIndex].Move(x - y);
             y = x;
         }, dx, Mathf.Abs(dx / _springSpeed));
     }
