@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using ZergRush.ReactiveCore;
 
@@ -10,7 +11,18 @@ public class Pipe : MonoBehaviour
     [SerializeField] private IndexConfig _indexConfig;
     [HideInInspector] public Cell<int> CurrentLocation = new Cell<int>();
     public event Action OnLocationUpdated;
-    public void LocationUpdated() => OnLocationUpdated?.Invoke();
+
+    public void LocationUpdated()
+    {
+        StartCoroutine(LocationUpdatedFixed());
+    }
+
+    private IEnumerator LocationUpdatedFixed()
+    {
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+        OnLocationUpdated?.Invoke();
+    }
 
     private void Awake() => _indexConfig.Init(CurrentLocation);
 

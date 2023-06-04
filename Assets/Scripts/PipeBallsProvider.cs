@@ -8,8 +8,9 @@ public class PipeBallsProvider : MonoBehaviour
     private Ball[] _balls;
     public Ball[] GetBalls()
     {
-        if (Time.frameCount == _lastFrame) return _balls;
-        _lastFrame = Time.frameCount;
+        Debug.Log($"GetBalls(); transform.position: {transform.position}", gameObject);
+        // if (Time.frameCount == _lastFrame) return _balls;
+        // _lastFrame = Time.frameCount;
         List<Ball> balls = new List<Ball>();
         foreach (var ballLocator in _ballLocators)
         {

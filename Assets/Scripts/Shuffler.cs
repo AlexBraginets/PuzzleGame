@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -51,6 +52,13 @@ public class Shuffler : MonoBehaviour
             };
             ballMover.DoFinalize();
         };
+    }
+
+    private IEnumerator StartShuffle()
+    {
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+        // Shuffle();
     }
 
     private float ShiftAmount => _duration * _speed * (float) _rnd.NextDouble();
