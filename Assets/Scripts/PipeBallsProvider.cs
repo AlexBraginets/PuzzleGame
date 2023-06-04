@@ -14,7 +14,7 @@ public class PipeBallsProvider : MonoBehaviour
         List<Ball> balls = new List<Ball>();
         foreach (var ballLocator in _ballLocators)
         {
-            balls.Add(ballLocator.GetBall());
+            balls.Add(ballLocator.GetBall(AllBallsProvider.Instance.Balls));
         }
 
         _balls = balls.ToArray();

@@ -6,6 +6,10 @@ public static class ListUtils
 
     public static T Random<T>(this List<T> list)
     {
-        return list[RND.Next(0, list.Count)];
+        return Random(list, RND);
+    }
+    public static T Random<T>(this List<T> list, System.Random rnd)
+    {
+        return list[rnd.Next(0, list.Count)];
     }
 }

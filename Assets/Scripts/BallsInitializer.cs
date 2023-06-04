@@ -34,12 +34,14 @@ public class BallsInitializer : MonoBehaviour
             LineIndex = _spawnLineIndex,
             LocalLength = distance
         };
+        
         for (int i = 0; i < _ballsCount; i++)
         {
             Ball ball = Instantiate(GetBallPrefab(i), transform);
             ball.ContainerIndex = _containerIndex;
             _ballsContainer.Add(ball);
             ball.UpdateWayData(wayData);
+            ball.id = i;
             wayData.LocalLength += dx;
         }
     }

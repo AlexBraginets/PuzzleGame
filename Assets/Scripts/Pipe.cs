@@ -1,12 +1,22 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using ZergRush.ReactiveCore;
 
 public class Pipe : MonoBehaviour
 {
+    [SerializeField] private PipeGetBallsLog _log;
     [SerializeField] private PipeBallsProvider _ballsProvider;
-    public Ball[] Balls => _ballsProvider.GetBalls();
+
+    public Ball[] Balls
+    {
+        get
+        {
+            var balls = _ballsProvider.GetBalls();
+            _log.Log(balls);
+            return balls;
+        }
+        
+    }
     
     [SerializeField] private IndexConfig _indexConfig;
     [HideInInspector] public Cell<int> CurrentLocation = new Cell<int>();
@@ -14,17 +24,14 @@ public class Pipe : MonoBehaviour
 
     public void LocationUpdated()
     {
-        StartCoroutine(LocationUpdatedFixed());
-    }
-
-    private IEnumerator LocationUpdatedFixed()
-    {
-        yield return new WaitForFixedUpdate();
-        yield return new WaitForFixedUpdate();
         OnLocationUpdated?.Invoke();
     }
 
-    private void Awake() => _indexConfig.Init(CurrentLocation);
+    private void Awake()
+    {
+        _indexConfig.Init(CurrentLocation);
+        _log.Clear();
+    }
 
     public void Switch()
     {

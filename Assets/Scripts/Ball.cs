@@ -4,6 +4,11 @@ public class Ball : MonoBehaviour
 {
     public int ContainerIndex;
     [SerializeField] private WayData _wayData = new WayData();
+    public int id;
+    public override string ToString()
+    {
+        return $"[{ContainerIndex}:{id}]";
+    }
 
     public Transform Parent
     {

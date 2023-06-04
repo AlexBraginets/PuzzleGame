@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -13,9 +12,15 @@ public class Shuffler : MonoBehaviour
     [SerializeField] private int _shuffleCount = 10;
     [SerializeField] private float _springSpeed;
     [SerializeField] private float _shuffleTimeScale;
+    [SerializeField] private int _rndSeed;
     private System.Random _rnd = new System.Random();
 
-    private int WayToShuffleIndex => _tubeSwitcher.GetOpenWays().Random();
+    private void Awake()
+    {
+        _rnd = new System.Random(_rndSeed);
+    }
+
+    private int WayToShuffleIndex => _tubeSwitcher.GetOpenWays().Random(_rnd);
 
 
     public void Shuffle()
@@ -52,13 +57,6 @@ public class Shuffler : MonoBehaviour
             };
             ballMover.DoFinalize();
         };
-    }
-
-    private IEnumerator StartShuffle()
-    {
-        yield return new WaitForFixedUpdate();
-        yield return new WaitForFixedUpdate();
-        // Shuffle();
     }
 
     private float ShiftAmount => _duration * _speed * (float) _rnd.NextDouble();
