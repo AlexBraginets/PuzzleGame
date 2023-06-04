@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public static int index;
     public int ContainerIndex;
     [SerializeField] private WayData _wayData = new WayData();
     public int id;
@@ -36,5 +37,11 @@ public class Ball : MonoBehaviour
     private void Move(Vector3 position)
     {
         transform.position = position;
+    }
+
+    [ContextMenu("log position")]
+    private void LogPosition()
+    {
+        Debug.Log($"position: {transform.position}", this);
     }
 }

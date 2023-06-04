@@ -13,51 +13,243 @@ MonoBehaviour:
   m_Name: Pipe 1
   m_EditorClassIdentifier: 
   logs:
-  - 'PipeMoverPipe 1z: -3,30000 [0:22]'
-  - 'PipeMoverPipe 1z: -3,30000 [0:21]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:22]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:21]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:22]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:21]'
-  - 'BallsWayDataRefresherPipe 1z: 3,30000 [0:22]'
-  - 'BallsWayDataRefresherPipe 1z: 3,30000 [0:21]'
-  - 'PipeMoverPipe 1z: 3,30000 [1:7]'
-  - 'PipeMoverPipe 1z: 3,30000 [1:6]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:7]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:6]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:7]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:6]'
-  - 'BallsWayDataRefresherPipe 1z: -6,00000 [1:7]'
-  - 'BallsWayDataRefresherPipe 1z: -6,00000 [1:6]'
-  - 'PipeMoverPipe 1z: -6,00000 [1:7]'
-  - 'PipeMoverPipe 1z: -6,00000 [1:6]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:7]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:6]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:7]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:6]'
-  - 'BallsWayDataRefresherPipe 1z: -3,30000 [1:7]'
-  - 'BallsWayDataRefresherPipe 1z: -3,30000 [1:6]'
-  - 'PipeMoverPipe 1z: -3,30000 [0:15]'
-  - 'PipeMoverPipe 1z: -3,30000 [0:14]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:15]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:14]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:15]'
-  - 'BallsContainerHolderPipe 1z: -3,30000 [0:14]'
-  - 'BallsWayDataRefresherPipe 1z: 3,30000 [0:15]'
-  - 'BallsWayDataRefresherPipe 1z: 3,30000 [0:14]'
-  - 'PipeMoverPipe 1z: 3,30000 [1:16]'
-  - 'PipeMoverPipe 1z: 3,30000 [1:15]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:16]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:15]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:16]'
-  - 'BallsContainerHolderPipe 1z: 3,30000 [1:15]'
-  - 'BallsWayDataRefresherPipe 1z: -6,00000 [1:16]'
-  - 'BallsWayDataRefresherPipe 1z: -6,00000 [1:15]'
-  - 'PipeMoverPipe 1z: -6,00000 [1:16]'
-  - 'PipeMoverPipe 1z: -6,00000 [1:15]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:16]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:15]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:16]'
-  - 'BallsContainerHolderPipe 1z: -6,00000 [1:15]'
-  - 'BallsWayDataRefresherPipe 1z: -3,30000 [1:16]'
-  - 'BallsWayDataRefresherPipe 1z: -3,30000 [1:15]'
+  - Name: 0
+    Prefix: 'PipeMoverPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:22]'
+    Position: {x: -3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 1
+    Prefix: 'PipeMoverPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:21]'
+    Position: {x: -3.3, y: 1.1000001, z: 0}
+    Distance: 0.9
+  - Name: 2
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:22]'
+    Position: {x: -3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 3
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:21]'
+    Position: {x: -3.3, y: 1.1000001, z: 0}
+    Distance: 0.9
+  - Name: 4
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:22]'
+    Position: {x: -3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 5
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:21]'
+    Position: {x: -3.3, y: 1.1000001, z: 0}
+    Distance: 0.9
+  - Name: 6
+    Prefix: 'BallsWayDataRefresherPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[0:22]'
+    Position: {x: 3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 7
+    Prefix: 'BallsWayDataRefresherPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[0:21]'
+    Position: {x: 3.3, y: 1.1000001, z: 0}
+    Distance: 0.9
+  - Name: 8
+    Prefix: 'PipeMoverPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: 3.3, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 9
+    Prefix: 'PipeMoverPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: 3.3, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 10
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: 3.3, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 11
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: 3.3, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 12
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: 3.3, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 13
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: 3.3, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 14
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: -6, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 15
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: -6, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 16
+    Prefix: 'PipeMoverPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: -6, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 17
+    Prefix: 'PipeMoverPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: -6, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 18
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: -6, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 19
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: -6, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 20
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: -6, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 21
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: -6, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 22
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[1:7]'
+    Position: {x: -3.3, y: 0.0000009536743, z: 0}
+    Distance: 0.9
+  - Name: 23
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[1:6]'
+    Position: {x: -3.3, y: 1.1000004, z: 0}
+    Distance: 0.9
+  - Name: 24
+    Prefix: 'PipeMoverPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:15]'
+    Position: {x: -3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 25
+    Prefix: 'PipeMoverPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:14]'
+    Position: {x: -3.3, y: 1.0999999, z: 0}
+    Distance: 0.9
+  - Name: 26
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:15]'
+    Position: {x: -3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 27
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:14]'
+    Position: {x: -3.3, y: 1.0999999, z: 0}
+    Distance: 0.9
+  - Name: 28
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:15]'
+    Position: {x: -3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 29
+    Prefix: 'BallsContainerHolderPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[0:14]'
+    Position: {x: -3.3, y: 1.0999999, z: 0}
+    Distance: 0.9
+  - Name: 30
+    Prefix: 'BallsWayDataRefresherPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[0:15]'
+    Position: {x: 3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 31
+    Prefix: 'BallsWayDataRefresherPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[0:14]'
+    Position: {x: 3.3, y: 1.0999999, z: 0}
+    Distance: 0.9
+  - Name: 32
+    Prefix: 'PipeMoverPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: 3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 33
+    Prefix: 'PipeMoverPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: 3.3, y: 1.0999992, z: 0}
+    Distance: 0.9
+  - Name: 34
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: 3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 35
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: 3.3, y: 1.0999992, z: 0}
+    Distance: 0.9
+  - Name: 36
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: 3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 37
+    Prefix: 'BallsContainerHolderPipe 1z: (3.30000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: 3.3, y: 1.0999992, z: 0}
+    Distance: 0.9
+  - Name: 38
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: -6, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 39
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: -6, y: 1.0999992, z: 0}
+    Distance: 0.9
+  - Name: 40
+    Prefix: 'PipeMoverPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: -6, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 41
+    Prefix: 'PipeMoverPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: -6, y: 1.0999992, z: 0}
+    Distance: 0.9
+  - Name: 42
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: -6, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 43
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: -6, y: 1.0999992, z: 0}
+    Distance: 0.9
+  - Name: 44
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: -6, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 45
+    Prefix: 'BallsContainerHolderPipe 1z: (-6.00000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: -6, y: 1.0999992, z: 0}
+    Distance: 0.9
+  - Name: 46
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[1:16]'
+    Position: {x: -3.3, y: -0.00000047683716, z: 0}
+    Distance: 0.9
+  - Name: 47
+    Prefix: 'BallsWayDataRefresherPipe 1z: (-3.30000, 0.55000, 0.00000)'
+    FullID: '[1:15]'
+    Position: {x: -3.3, y: 1.0999992, z: 0}
+    Distance: 0.9

@@ -3024,9 +3024,9 @@ MonoBehaviour:
   - {fileID: 2037611690}
   - {fileID: 1656985956}
   _tubeSwitcher: {fileID: 1512907530}
-  _shuffleCount: 6
+  _shuffleCount: 100
   _springSpeed: 50
-  _shuffleTimeScale: 1
+  _shuffleTimeScale: 100
   _rndSeed: 1
 --- !u!1 &963194225
 GameObject:
@@ -4816,7 +4816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefc9c0cbc080d6468cda20d6b6f77ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _log: {fileID: 11400000, guid: f903eaa983504f44991c9cf8f338552d, type: 2}
+  _log: {fileID: 11400000, guid: 0e95c64757756fd4ab46407f96f3c433, type: 2}
   _ballsProvider: {fileID: 1528087687}
   _indexConfig: {fileID: 11400000, guid: f2ae1edfcc4b1da41b2a6399792560b8, type: 2}
 --- !u!65 &1528087686

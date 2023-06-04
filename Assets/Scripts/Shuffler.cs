@@ -25,6 +25,7 @@ public class Shuffler : MonoBehaviour
 
     public void Shuffle()
     {
+        Debug.Log("shuffle");
         Time.timeScale = _shuffleTimeScale;
         float y = 0;
         int shuffleIndex = WayToShuffleIndex;

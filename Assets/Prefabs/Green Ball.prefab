@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 290291095433387959}
   - component: {fileID: 2130166467}
   - component: {fileID: 2130166468}
+  - component: {fileID: -5378672903903445736}
+  - component: {fileID: 6462885599267039491}
   m_Layer: 11
   m_Name: Green Ball
   m_TagString: Untagged
@@ -111,6 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7f7234a67b43d4f88de31af774ece8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ContainerIndex: 0
+  id: 0
 --- !u!114 &2130166468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,3 +129,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ball: {fileID: 2130166467}
   _speed: -0.3
+--- !u!114 &-5378672903903445736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290291095433387958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afeb74098dda2a48bbbfdce0562a4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerId: 1
+  id: 6
+  _color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &6462885599267039491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290291095433387958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afeb74098dda2a48bbbfdce0562a4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerId: 0
+  id: 11
+  _color: {r: 0.018968105, g: 0, b: 1, a: 0}

@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _winAudio;
     [SerializeField] private BallsContainer[] _containersToCompleted;
+    public static bool IsPaused = false;
     private bool _hasWon;
     private void Start()
     {

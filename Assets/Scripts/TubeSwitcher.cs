@@ -10,6 +10,14 @@ public class TubeSwitcher : MonoBehaviour
     [field: SerializeField] public int Position { get; private set; }
     public event Action OnSwitched;
 
+    private void Start()
+    {
+        foreach (var pipe in _pipes)
+        {
+            pipe.OnLocationUpdated += CheckHasSwitched;
+        }
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -37,7 +45,7 @@ public class TubeSwitcher : MonoBehaviour
         PlayAudio();
         foreach (var pipe in _pipes)
         {
-            pipe.OnLocationUpdated += CheckHasSwitched;
+            // Debug.Log("pipe.OnLocationUpdated.length" + pipe.OnLocationUpdatedLength);
             pipe.Switch();
         }
 

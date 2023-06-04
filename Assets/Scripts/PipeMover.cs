@@ -30,11 +30,16 @@ public class PipeMover : MonoBehaviour
         Vector3 targetPosition = _locations[locationIndex].position;
         Vector3 targetRotation = _locations[locationIndex].eulerAngles;
         _ballsAttacher.Attach(balls);
-        transform.DOMove(targetPosition, _animationDuration);
-        transform.DORotate(targetRotation, _animationDuration).OnComplete(() =>
+        var tween1 =transform.DOMove(targetPosition, _animationDuration);
+        var tween2 = transform.DORotate(targetRotation, _animationDuration);
+        tween2.onComplete += ()=>
         {
             _ballsAttacher.Deattach();
+            // Debug.Log($"id: {Ball.index++} pipe mover position: {transform.position}", this);
+            Debug.Log($"{name} transform.position: {transform.position}");
             _pipe.LocationUpdated();
-        });
+            tween1.Kill();
+            tween2.Kill();
+        };
     }
 }

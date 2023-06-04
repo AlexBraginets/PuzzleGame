@@ -19,6 +19,7 @@ public class BallMover : MonoBehaviour
         _finalizer.Finalize(_deltaMoved, this);
         _finalizer.OnFinilized += () =>
         {
+            Debug.Log("BallMover.Finilize");
             OnFinilized?.Invoke();
             OnFinilized = null;
         };
