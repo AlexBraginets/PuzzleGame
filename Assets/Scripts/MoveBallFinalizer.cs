@@ -1,8 +1,10 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
 public class MoveBallFinalizer : MonoBehaviour
 {
+    public event Action OnFinilized;
     [SerializeField] private float _moveSpeed;
     private BallMover _ballMover;
     private float _lastMoved;
@@ -16,7 +18,12 @@ public class MoveBallFinalizer : MonoBehaviour
         _ballMover = ballMover;
         float dx = GetFinalDX();
         _lastMoved = 0f;
-        DOTween.To(() => 0f, MoveBalls, dx, Mathf.Abs(dx / _moveSpeed));
+        DOTween.To(() => 0f, MoveBalls, dx, Mathf.Abs(dx / _moveSpeed)).onComplete += () =>
+        {
+            OnFinilized?.Invoke();
+            OnFinilized = null;
+        }
+        ;
         PlayAudio();
     }
 
@@ -41,9 +48,10 @@ public class MoveBallFinalizer : MonoBehaviour
 
         return dx;
     }
+
     private void MoveBalls(float x)
     {
-        float dMove =  x -  _lastMoved;
+        float dMove = x - _lastMoved;
         _lastMoved = x;
         _ballMover.Move(dMove);
     }

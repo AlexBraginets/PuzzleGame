@@ -8,6 +8,7 @@ public class TubeSwitcher : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _switchAudio;
     [field: SerializeField] public int Position { get; private set; }
+    public event Action OnSwitched;
 
     private void Update()
     {
@@ -36,15 +37,32 @@ public class TubeSwitcher : MonoBehaviour
         PlayAudio();
         foreach (var pipe in _pipes)
         {
+            pipe.OnLocationUpdated += CheckHasSwitched;
             pipe.Switch();
         }
 
         UpdatePosition();
     }
 
+    private int _pipeLocationUpdatedCount;
+
+    private void CheckHasSwitched()
+    {
+        _pipeLocationUpdatedCount++;
+        if (_pipeLocationUpdatedCount != _pipes.Length) return;
+        _pipeLocationUpdatedCount = 0;
+        HasSwitched();
+    }
+
+    public void HasSwitched()
+    {
+        OnSwitched?.Invoke();
+        OnSwitched = null;
+    }
+
     private void PlayAudio()
     {
-      _audioSource.PlayOneShot(_switchAudio);
+        _audioSource.PlayOneShot(_switchAudio);
     }
 
     private void UpdatePosition()
