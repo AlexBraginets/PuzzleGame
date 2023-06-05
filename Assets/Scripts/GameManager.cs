@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _tubeSwitcher.OnSwitchedStatic += CheckWin;
+        Application.targetFrameRate = 60;
     }
 
     private void CheckWin()
