@@ -11,7 +11,7 @@ public class BallLocator : MonoBehaviour
         var bs12 = balls.Where(b => Vector3.Distance(transform.position, b.transform.position) < .91f).ToList(); 
         if (bs12.Count > 1)
         {
-            Debug.LogError("several balls with distance less than .91 to a locator");
+            Debug.LogError("several balls with distance less than .91 to a locator", this);
             foreach (var b in bs12)
             {
                 Debug.LogError($"ball in proximity: {b}", b.gameObject);
@@ -21,7 +21,8 @@ public class BallLocator : MonoBehaviour
             var b1 = bs12[1];
             Debug.Log($"id: {Ball.index++} bs12[0]: {b0.transform.position}", b0.gameObject);
             Debug.Log($"id: {Ball.index++} bs12[1]: {b1.transform.position}", b1.gameObject);
-            // Debug.Break();
+            Debug.Break();
+            GameManager.IsPaused = true;
         }
         return ball;
     }

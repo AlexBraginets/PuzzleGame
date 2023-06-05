@@ -25,6 +25,7 @@ public class Shuffler : MonoBehaviour
 
     public void Shuffle()
     {
+        if (GameManager.IsPaused) return;
         Debug.Log("shuffle");
         Time.timeScale = _shuffleTimeScale;
         float y = 0;
