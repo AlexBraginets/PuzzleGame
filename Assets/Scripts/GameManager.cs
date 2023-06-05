@@ -5,14 +5,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _winAudio;
     [SerializeField] private BallsContainer[] _containersToCompleted;
+    [SerializeField] private TubeSwitcher _tubeSwitcher;
     public static bool IsPaused = false;
     private bool _hasWon;
     private void Start()
     {
-        foreach (var container in _containersToCompleted)
-        {
-            container.OnCompleted += CheckWin;
-        }
+        _tubeSwitcher.OnSwitchedStatic += CheckWin;
     }
 
     private void CheckWin()

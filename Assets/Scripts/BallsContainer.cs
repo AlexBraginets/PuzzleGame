@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BallsContainer : MonoBehaviour
 {
+    [SerializeField] private int _fullAmount = 24;
     public event Action OnCompleted;
     [field: SerializeField] public List<Ball> Balls { get; set; } = new List<Ball>();
     public void Remove(Ball ball) => Balls.Remove(ball);
@@ -31,6 +32,7 @@ public class BallsContainer : MonoBehaviour
 
     public bool IsCompleted()
     {
+        if (Balls.Count != _fullAmount) return false;
         int id = Balls.First().ContainerIndex;
         foreach (var ball in Balls)
         {

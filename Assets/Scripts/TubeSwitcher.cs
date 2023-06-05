@@ -9,6 +9,7 @@ public class TubeSwitcher : MonoBehaviour
     [SerializeField] private AudioClip _switchAudio;
     [field: SerializeField] public int Position { get; private set; }
     public event Action OnSwitched;
+    public event Action OnSwitchedStatic;
 
     private void Start()
     {
@@ -66,6 +67,7 @@ public class TubeSwitcher : MonoBehaviour
     {
         OnSwitched?.Invoke();
         OnSwitched = null;
+        OnSwitchedStatic?.Invoke();
     }
 
     private void PlayAudio()
