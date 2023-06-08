@@ -2236,7 +2236,7 @@ MonoBehaviour:
   _tubeSwitcher: {fileID: 1512907530}
   _shuffleCount: 40
   _springSpeed: 50
-  _shuffleTimeScale: 4
+  _shuffleTimeScale: 2
   _rndSeed: 1
 --- !u!1 &963194225
 GameObject:
